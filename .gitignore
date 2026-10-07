@@ -17,3 +17,5 @@ dist/
 **/.impeccable/live/cache/
 **/.impeccable/live/*.png
 # impeccable-ignore-end
+
+designs.html
