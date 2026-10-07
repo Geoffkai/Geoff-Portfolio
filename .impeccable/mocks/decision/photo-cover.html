@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tomagan - The developer issue</title>
+<link rel="stylesheet" href="fonts/magazine.css">
+<style>
+:root{--night:#0B0C13;--ivory:#EEEBE2;--mute:#A9AFBF;--spot:#4D8DFF;--rule:rgba(238,235,226,.26);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--night);color:var(--ivory);font-family:"Libre Franklin",system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+::selection{background:var(--spot);color:var(--night)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--spot);outline-offset:4px}
+
+.cover{position:relative;height:100dvh;min-height:720px;max-height:1000px;overflow:hidden}
+.strip{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;height:46px;margin:0 48px;border-bottom:1px solid var(--rule);font-size:14px;font-weight:600}
+.strip nav{display:flex;gap:30px}
+.strip a{text-decoration:none;padding:6px 0}
+.strip nav a:hover{color:var(--spot)}
+
+.masthead{position:relative;z-index:3;pointer-events:none;margin:6px 48px 0;font-family:"Besley",serif;font-weight:900;font-size:13.5vw;line-height:.8;letter-spacing:-.035em;text-transform:uppercase;color:var(--spot);white-space:nowrap;text-align:center}
+.portrait{position:absolute;z-index:2;left:50%;bottom:0;height:min(80%,calc(100% - 150px));aspect-ratio:4/5;transform:translateX(-50%);object-fit:cover;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%);
+  mask-image:linear-gradient(to right,transparent 0,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%);
+  -webkit-mask-composite:source-in;mask-composite:intersect}
+
+.lead{position:absolute;z-index:3;left:48px;bottom:56px;width:min(27vw,372px)}
+.lead h1{font-family:"Besley",serif;font-weight:600;font-size:clamp(28px,2.75vw,40px);line-height:1.1;letter-spacing:-.015em}
+.lead p{margin-top:16px;font-size:16px;line-height:1.5;color:var(--mute)}
+.btn{display:inline-block;margin-top:24px;padding:13px 26px;background:var(--spot);color:var(--night);font-weight:700;font-size:16px;text-decoration:none;transition:transform .2s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+
+.lines{position:absolute;z-index:3;right:48px;bottom:56px;width:min(24vw,330px);list-style:none}
+.lines li+li{margin-top:22px;padding-top:20px;border-top:1px solid var(--rule)}
+.lines a{display:block;text-decoration:none}
+.lines b{display:block;font-family:"Besley",serif;font-weight:700;font-size:27px;line-height:1.05;letter-spacing:-.01em;transition:color .3s var(--ease)}
+.lines span{display:block;margin-top:6px;font-size:15px;line-height:1.4;color:var(--mute)}
+.lines a:hover b{color:var(--spot)}
+
+.profile{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,3fr);gap:48px;padding:96px 48px 120px;border-top:1px solid var(--rule);background:var(--ivory);color:#14151C}
+.profile h2{font-family:"Besley",serif;font-weight:800;font-size:60px;line-height:.98;letter-spacing:-.025em}
+.profile figure{margin-top:36px}
+.profile img{display:block;width:100%;max-width:340px;aspect-ratio:4/5;object-fit:cover}
+.profile figcaption{margin-top:10px;font-size:14px;color:#4A4E5C}
+.profile p{font-family:"Besley",serif;font-size:18px;line-height:1.6}
+.profile p+p{margin-top:1em}
+.profile .drop::first-letter{float:left;font-weight:900;font-size:5.2em;line-height:.82;padding:6px 10px 0 0;color:#1F4FD8}
+
+@media (max-width:900px){
+  .cover{height:auto;max-height:none;min-height:0;padding-bottom:32px}
+  .strip{margin:0 16px}
+  .strip nav{gap:16px}
+  .masthead{margin:8px 16px 0;font-size:21vw}
+  .portrait{position:relative;left:auto;bottom:auto;transform:none;display:block;width:100%;height:auto;margin-top:-6vw}
+  .lead,.lines{position:static;width:auto;margin:20px 16px 0}
+  .profile{grid-template-columns:1fr;padding:56px 16px 72px;gap:28px}
+  .profile h2{font-size:42px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="cover" id="top">
+  <div class="strip">
+    <a href="#top">Geoffrey Adam Tomagan</a>
+    <nav aria-label="Main"><a href="#work">Work</a><a href="#profile">Profile</a><a href="https://github.com/Geoffkai">Contact</a></nav>
+  </div>
+  <div class="masthead" aria-hidden="true">Tomagan</div>
+  <img class="portrait" src="assets/portrait-barong.jpg" alt="Portrait of Geoffrey Adam Tomagan in a white barong against a dark blue studio backdrop">
+
+  <div class="lead">
+    <h1>Geoffrey Adam Tomagan builds software you can open and use.</h1>
+    <p>Computer science student at UP Tacloban, open to freelance work and junior roles.</p>
+    <a class="btn" href="https://github.com/Geoffkai">Contact</a>
+  </div>
+
+  <ul class="lines" id="work">
+    <li><a href="#skolartrack"><b>SkolarTrack</b><span>Every scholarship for Filipino students, in one tracker.</span></a></li>
+    <li><a href="#antidoomscroll"><b>AntiDoomScroll</b><span>A Chrome extension that ends the endless scroll.</span></a></li>
+    <li><a href="#pathfinder"><b>Pathfinder-8</b><span>The puzzle game that can solve itself.</span></a></li>
+    <li><a href="#dormhub"><b>DormHub</b><span>A whole dormitory run from one desktop app.</span></a></li>
+  </ul>
+</header>
+
+<section class="profile" id="profile">
+  <div>
+    <h2>The profile</h2>
+    <figure>
+      <img src="assets/portrait-grad.jpg" alt="Geoffrey Adam Tomagan smiling in a green graduation gown">
+      <figcaption>Graduation portrait, class of 2024.</figcaption>
+    </figure>
+  </div>
+  <div>
+    <p class="drop">Geoffrey Adam Tomagan studies computer science at the University of the Philippines Tacloban. He has built four projects so far, and each one is a different kind of software.</p>
+    <p>SkolarTrack is a full-stack web app for scholarship applications. AntiDoomScroll is a Chrome extension. Pathfinder-8 is a browser game with an A* solver.</p>
+  </div>
+  <div>
+    <p>DormHub is a Java desktop app with a MySQL database, built with a team for managing a dormitory.</p>
+    <p>He works mainly in JavaScript and Java, and is looking for freelance work and junior developer roles.</p>
+  </div>
+</section>
+</body>
+</html>

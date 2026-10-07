@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geoffrey Adam Tomagan - Developer badge</title>
+<link rel="stylesheet" href="fonts/badge.css">
+<style>
+:root{--blue:#1A4BE0;--deep:#0B2A9A;--ink:#0B1020;--card:#F7F8FB;--soft:#4B5677;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--blue);color:#fff;font-family:"Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+::selection{background:#fff;color:var(--blue)}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:8px}
+
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 520px;min-height:100dvh;overflow:hidden}
+.top{position:absolute;inset:0 0 auto 0;z-index:3;display:flex;justify-content:flex-start;gap:64px;align-items:center;padding:28px 56px 0}
+.mark{font-family:"Unbounded",sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;text-decoration:none}
+.top nav{display:flex;align-items:center;gap:32px;font-size:16px;font-weight:600}
+.top nav a{text-decoration:none;padding:6px 0}
+.top nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+
+.copy{display:flex;flex-direction:column;justify-content:center;padding:120px 40px 56px 56px}
+h1{font-family:"Unbounded",sans-serif;font-weight:800;font-size:clamp(40px,4.7vw,70px);line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
+.lede{margin-top:26px;font-size:21px;line-height:1.5;max-width:38ch}
+.cta{display:flex;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;border:2px solid #fff;font-weight:700;font-size:17px;text-decoration:none;transition:transform .2s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.solid{background:#fff;color:var(--blue)}
+.work{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:64px;padding-top:22px;border-top:2px solid rgba(255,255,255,.35);list-style:none}
+.work a{display:block;text-decoration:none}
+.work b{display:block;font-family:"Unbounded",sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em}
+.work span{display:block;margin-top:6px;font-size:15px;line-height:1.35;color:#D6E0FF}
+.work a:hover b{text-decoration:underline;text-underline-offset:5px}
+
+.hang{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:50% -40px;transform:rotate(2.5deg)}
+.strap{width:46px;height:min(27dvh,250px);background:var(--deep);overflow:hidden;display:flex;justify-content:center}
+.strap span{writing-mode:vertical-rl;font-family:"Unbounded",sans-serif;font-weight:700;font-size:11px;letter-spacing:.3em;color:#9DB6FF;white-space:nowrap;line-height:46px}
+.clip{width:64px;height:26px;margin-top:-2px;border-radius:6px;background:linear-gradient(#E9ECF2,#B4BAC6);box-shadow:0 3px 6px rgba(3,12,60,.35)}
+.ring{width:26px;height:30px;margin-top:-4px;border:5px solid #C3C9D4;border-radius:10px}
+.card{position:relative;width:372px;margin-top:-14px;border:0;background:none;font:inherit;color:var(--ink);text-align:left;cursor:pointer;perspective:1400px}
+.card .inner{position:relative;display:block;transform-style:preserve-3d;transition:transform .9s var(--ease);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.card[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+.side{display:block;border-radius:24px;background:var(--card);padding:44px 26px 24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 46px 60px -32px rgba(3,12,60,.75),0 4px 10px rgba(3,12,60,.2)}
+.side::before{content:"";position:absolute;left:50%;top:16px;width:64px;height:14px;margin-left:-32px;border-radius:7px;background:var(--blue);box-shadow:inset 0 2px 3px rgba(3,12,60,.5)}
+.back{position:absolute;inset:0;transform:rotateY(180deg);display:flex;flex-direction:column}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-family:"Unbounded",sans-serif;font-weight:700;font-size:13px;letter-spacing:.09em;text-transform:uppercase}
+.row span:last-child{color:var(--blue)}
+.photo{display:block;width:100%;aspect-ratio:1/1.02;margin-top:14px;border-radius:14px;object-fit:cover;object-position:50% 16%}
+.who{display:block;margin-top:18px;font-family:"Unbounded",sans-serif;font-weight:700;font-size:19px;line-height:1.2;letter-spacing:-.02em}
+.what{display:block;margin-top:6px;font-size:16px;color:var(--soft)}
+.foot{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1.5px solid #D5DAE6;font-size:15px;font-weight:600}
+.foot span:last-child{color:var(--soft);font-weight:500}
+.back h2{font-family:"Unbounded",sans-serif;font-weight:700;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-top:22px}
+.back h2:first-of-type{margin-top:6px}
+.back p{margin-top:8px;font-size:17px;line-height:1.5}
+.back .foot{margin-top:auto}
+
+@media (prefers-reduced-motion:no-preference){
+  html:not(.shot) .hang{animation:swing 2.6s cubic-bezier(.3,0,.2,1) both}
+}
+@keyframes swing{0%{transform:rotate(13deg)}22%{transform:rotate(-7deg)}44%{transform:rotate(5.5deg)}64%{transform:rotate(-1deg)}82%{transform:rotate(3.4deg)}100%{transform:rotate(2.5deg)}}
+
+.next{display:grid;grid-template-columns:5fr 7fr;gap:56px;padding:96px 56px 120px;background:var(--card);color:var(--ink)}
+.next h2{font-family:"Unbounded",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em;line-height:1.05}
+.next p{margin-top:18px;font-size:19px;line-height:1.5;max-width:44ch;color:#28304A}
+.next img{display:block;width:100%;border-radius:16px;box-shadow:0 30px 50px -30px rgba(3,12,60,.5)}
+
+@media (max-width:1020px){
+  .hero{grid-template-columns:1fr}
+  .top{padding:20px 16px 0}
+  .copy{padding:96px 16px 24px}
+  .work{grid-template-columns:1fr 1fr;margin-top:40px}
+  .hang{margin:0 auto 56px}
+  .strap{height:90px}
+  .card{width:min(372px,calc(100vw - 32px))}
+  .next{grid-template-columns:1fr;padding:56px 16px 72px}
+  .next h2{font-size:34px}
+}
+@media (prefers-reduced-motion:reduce){.card .inner,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+  <div class="top">
+    <a class="mark" href="#hero" aria-label="Geoffrey Adam Tomagan, home">GAT</a>
+    <nav aria-label="Main"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/Geoffkai">Contact</a></nav>
+  </div>
+
+  <div class="copy">
+    <h1>Geoffrey Adam Tomagan</h1>
+    <p class="lede">Computer science student at UP Tacloban. I build web apps, browser extensions and games.</p>
+    <div class="cta"><a class="btn solid" href="https://github.com/Geoffkai">Contact</a><a class="btn" href="#work">See the work</a></div>
+    <ul class="work" id="work">
+      <li><a href="#skolartrack"><b>SkolarTrack</b><span>Full-stack web app</span></a></li>
+      <li><a href="#antidoomscroll"><b>AntiDoomScroll</b><span>Chrome extension</span></a></li>
+      <li><a href="#pathfinder"><b>Pathfinder-8</b><span>Puzzle game with A* solver</span></a></li>
+      <li><a href="#dormhub"><b>DormHub</b><span>Java desktop app</span></a></li>
+    </ul>
+  </div>
+
+  <div class="hang" id="hang">
+    <div class="strap" aria-hidden="true"><span>GEOFFKAI GEOFFKAI GEOFFKAI GEOFFKAI GEOFFKAI</span></div>
+    <div class="clip" aria-hidden="true"></div>
+    <div class="ring" aria-hidden="true"></div>
+    <button class="card" id="card" type="button" aria-pressed="false" aria-label="Developer badge for Geoffrey Adam Tomagan. Press to flip.">
+      <span class="inner">
+        <span class="side front">
+          <span class="row"><span>Developer</span><span>2026</span></span>
+          <img class="photo" src="assets/portrait-barong.jpg" alt="Portrait of Geoffrey Adam Tomagan in a white barong against a dark blue studio backdrop">
+          <span class="who">Geoffrey Adam Tomagan</span>
+          <span class="what">BS Computer Science, UP Tacloban</span>
+          <span class="foot"><span>github.com/Geoffkai</span><span>Flip</span></span>
+        </span>
+        <span class="side back">
+          <span class="row"><span>Access</span><span>2026</span></span>
+          <h2>Stack</h2>
+          <p>JavaScript, React, Node with Express, PostgreSQL, Java, MySQL.</p>
+          <h2>Built so far</h2>
+          <p>A full-stack web app, a Chrome extension, a puzzle game with an A* solver, and a desktop app.</p>
+          <h2>Open to</h2>
+          <p>Freelance work and junior roles.</p>
+          <span class="foot"><span>github.com/Geoffkai</span><span>Flip</span></span>
+        </span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<section class="next" id="skolartrack">
+  <div>
+    <h2>SkolarTrack</h2>
+    <p>A scholarship aggregator and application tracker for Filipino students. React, Node with Express, and PostgreSQL, with separate roles for students and admins.</p>
+  </div>
+  <img src="assets/skolartrack.png" alt="SkolarTrack home page listing open scholarships with amounts and deadlines">
+</section>
+
+<script>
+if(new URLSearchParams(location.search).has('shot'))document.documentElement.classList.add('shot');
+const card=document.getElementById('card'),hero=document.getElementById('hero');
+card.addEventListener('click',()=>card.setAttribute('aria-pressed',card.getAttribute('aria-pressed')!=='true'));
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  hero.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();
+    card.style.setProperty('--ry',Math.max(-10,Math.min(10,(e.clientX-(r.left+r.width/2))/40))+'deg');
+    card.style.setProperty('--rx',Math.max(-8,Math.min(8,-(e.clientY-(r.top+r.height/2))/50))+'deg')});
+  hero.addEventListener('pointerleave',()=>{card.style.setProperty('--ry','0deg');card.style.setProperty('--rx','0deg')});
+}
+</script>
+</body>
+</html>

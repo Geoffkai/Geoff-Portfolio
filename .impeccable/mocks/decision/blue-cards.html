@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geoffrey Adam Tomagan - Series One, blue</title>
+<link rel="stylesheet" href="fonts/cards.css">
+<style>
+:root{--pink:#8FC7F0;--recess:#73B3E4;--ink:#0A0A0B;--stock:#FAFBFC;--board:#CBD5DE;--backink:#0B3FA6;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--pink);color:var(--ink);font-family:"Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+::selection{background:var(--ink);color:var(--pink)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:10px}
+
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 56px 0}
+.name{font-family:"Alfa Slab One",serif;font-size:21px;text-decoration:none;letter-spacing:.01em}
+.top nav{display:flex;align-items:center;gap:30px;font-size:16px;font-weight:600}
+.top nav a{text-decoration:none;padding:6px 0}
+.top nav a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.btn{display:inline-block;font:inherit;font-weight:600;font-size:17px;padding:13px 24px;border-radius:10px;border:2.5px solid var(--ink);cursor:pointer;text-decoration:none;transition:transform .2s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.ink{background:var(--ink);color:var(--pink)}
+.btn.line{background:transparent;color:var(--ink)}
+.top nav .btn{padding:9px 20px;font-size:16px}
+.top nav .btn:hover{text-decoration:none}
+
+.hero{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:56px;align-items:center;min-height:calc(100dvh - 68px);padding:32px 56px 56px}
+h1{font-family:"Alfa Slab One",serif;font-weight:400;font-size:clamp(56px,6.6vw,96px);line-height:.92;letter-spacing:-.01em}
+.lede{margin-top:26px;font-size:19px;line-height:1.5;max-width:32ch}
+.cta{display:flex;gap:12px;margin-top:30px}
+
+.album{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;perspective:1600px}
+.slot{position:relative;aspect-ratio:5/7;border-radius:12px;background:var(--recess);box-shadow:inset 0 3px 8px rgba(8,40,90,.3)}
+.slot.empty{display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px;background:transparent;box-shadow:none;border:2.5px dashed rgba(10,10,11,.55)}
+.slot.empty b{font-family:"Alfa Slab One",serif;font-weight:400;font-size:44px;line-height:1;color:rgba(10,30,70,.5)}
+.slot.empty span{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:17px}
+
+.card{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;transform-style:preserve-3d;transition:transform .8s var(--ease)}
+.card:hover{transform:translateY(-6px) rotate(-1deg)}
+.card[aria-pressed="true"]{transform:rotateY(180deg)}
+.card[aria-pressed="true"]:hover{transform:translateY(-6px) rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 14px 22px -12px rgba(8,30,70,.55)}
+.front{display:flex;flex-direction:column;background:var(--stock);padding:9px}
+.field{position:relative;flex:1;display:grid;place-items:center;background:var(--c);border:2px solid var(--ink);border-bottom:0;border-radius:6px 6px 0 0}
+.field .no{position:absolute;left:10px;top:8px;font-family:"Alfa Slab One",serif;font-size:22px;line-height:1}
+.field svg{width:58%;height:auto}
+.field svg *{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.field svg .solid{fill:var(--ink)}
+.band{background:var(--ink);color:var(--stock);padding:9px 12px 10px;border-radius:0 0 6px 6px}
+.band b{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:23px;line-height:1;letter-spacing:.03em;text-transform:uppercase}
+.band span{display:block;margin-top:4px;font-size:13.5px;color:#D5DEE8}
+.back{transform:rotateY(180deg);display:flex;flex-direction:column;background:var(--board);color:var(--backink);padding:14px 15px 12px;font-family:"Barlow Condensed",sans-serif}
+.back header{display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--backink)}
+.back header b{font-family:"Alfa Slab One",serif;font-weight:400;font-size:24px;line-height:1}
+.back header span{font-weight:700;font-size:16px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.back p{flex:1;margin-top:9px;font-weight:500;font-size:13.5px;line-height:1.26;text-align:justify;hyphens:auto}
+.back footer{padding-top:7px;border-top:1px solid var(--backink);font-weight:600;font-size:12.5px;letter-spacing:.01em;white-space:nowrap}
+
+.next{display:grid;grid-template-columns:auto 1fr;gap:44px;padding:80px 56px 120px;border-top:2.5px solid var(--ink)}
+.next .no{font-family:"Alfa Slab One",serif;font-size:150px;line-height:.8}
+.next h2{font-family:"Alfa Slab One",serif;font-weight:400;font-size:58px;line-height:1}
+.next p{margin-top:16px;font-size:19px;line-height:1.5;max-width:52ch}
+.next img{display:block;margin-top:34px;width:100%;max-width:960px;border:2.5px solid var(--ink);border-radius:12px}
+
+@media (max-width:980px){
+  .top{padding:18px 16px 0}
+  .top nav a:not(.btn){display:none}
+  .hero{grid-template-columns:1fr;gap:36px;padding:32px 16px 48px;min-height:0}
+  .album{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .next{grid-template-columns:1fr;gap:12px;padding:56px 16px 72px}
+  .next .no{font-size:90px}
+  .next h2{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="name" href="#top">Geoffrey Adam Tomagan</a>
+  <nav aria-label="Main"><a href="#album">The set</a><a href="#about">About</a><a class="btn ink" href="https://github.com/Geoffkai">Contact</a></nav>
+</header>
+
+<main class="hero" id="top">
+  <div>
+    <h1>Series One</h1>
+    <p class="lede">Software by Geoffrey Adam Tomagan, a computer science student at UP Tacloban. Four cards printed, four slots still open.</p>
+    <div class="cta"><button class="btn ink" id="flipall" type="button">Flip every card</button><a class="btn line" href="https://github.com/Geoffkai">See the source</a></div>
+  </div>
+
+  <ol class="album" id="album">
+    <li class="slot">
+      <button class="card" type="button" aria-pressed="false" aria-label="Card 01, SkolarTrack. Flip to read the back.">
+        <span class="face front"><span class="field" style="--c:#F7C600"><span class="no">01</span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M16 78L39 60L62 42L85 24"/><circle cx="16" cy="78" r="8" style="fill:#F7C600"/><circle cx="39" cy="60" r="8" style="fill:#F7C600"/><circle cx="62" cy="42" r="8" style="fill:#F7C600"/><circle class="solid" cx="85" cy="24" r="9"/></svg>
+        </span><span class="band"><b>SkolarTrack</b><span>Full-stack web app</span></span></span>
+        <span class="face back"><header><b>01</b><span>SkolarTrack</span></header>
+          <p>A scholarship aggregator and tracker for Filipino students. CHED, DOST and foundation scholarships sit in one searchable list. Each application moves through four stages: Interested, Applied, Interview, Result. React, Express and PostgreSQL, with JWT logins and role-based access. In active development.</p>
+          <footer>skolar-track.vercel.app</footer></span>
+      </button>
+    </li>
+    <li class="slot">
+      <button class="card" type="button" aria-pressed="false" aria-label="Card 02, AntiDoomScroll. Flip to read the back.">
+        <span class="face front"><span class="field" style="--c:#F4F5F2"><span class="no">02</span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="58" r="30"/><path d="M50 28V14M40 12H60M50 58L64 44"/></svg>
+        </span><span class="band"><b>AntiDoomScroll</b><span>Chrome extension</span></span></span>
+        <span class="face back"><header><b>02</b><span>AntiDoomScroll</span></header>
+          <p>A Chrome extension that limits time on the social sites you choose: Facebook, Instagram, TikTok and YouTube. Set a threshold in minutes. When time is up, a full-page break prompt appears with snooze and exit. Settings persist in chrome.storage.local.</p>
+          <footer>github.com/Geoffkai/AntiDoomScroll</footer></span>
+      </button>
+    </li>
+    <li class="slot">
+      <button class="card" type="button" aria-pressed="true" aria-label="Card 03, Pathfinder-8. Flip to see the front.">
+        <span class="face front"><span class="field" style="--c:#E2231A"><span class="no">03</span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="14" y="14" width="20" height="20" rx="3"/><rect x="40" y="14" width="20" height="20" rx="3"/><rect x="66" y="14" width="20" height="20" rx="3"/><rect x="14" y="40" width="20" height="20" rx="3"/><rect x="40" y="40" width="20" height="20" rx="3"/><rect x="66" y="40" width="20" height="20" rx="3"/><rect x="14" y="66" width="20" height="20" rx="3"/><rect x="40" y="66" width="20" height="20" rx="3"/></svg>
+        </span><span class="band"><b>Pathfinder-8</b><span>Puzzle game with A* solver</span></span></span>
+        <span class="face back"><header><b>03</b><span>Pathfinder-8</span></header>
+          <p>An 8-puzzle you can play in the browser. The auto-solver finds the shortest solution with A* search and a Manhattan distance heuristic on a binary min-heap, and checks solvability first by counting inversions. Two themes. Normal, timed and move-limit modes.</p>
+          <footer>geoffkai.github.io/Pathfinder-8</footer></span>
+      </button>
+    </li>
+    <li class="slot">
+      <button class="card" type="button" aria-pressed="false" aria-label="Card 04, DormHub. Flip to read the back.">
+        <span class="face front"><span class="field" style="--c:#5E9BF5"><span class="no">04</span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="22" y="14" width="56" height="72" rx="3"/><path d="M34 30H44M56 30H66M34 46H44M56 46H66M44 86V66H56V86"/></svg>
+        </span><span class="band"><b>DormHub</b><span>Java desktop app</span></span></span>
+        <span class="face back"><header><b>04</b><span>DormHub</span></header>
+          <p>A desktop app for running a dormitory: residents, rooms, assignments, payments and dorm passes in one place. Java 21 with Swing and a MySQL database through JDBC, layered as view, controller, service and DAO. Ships with a Windows installer. A team project.</p>
+          <footer>github.com/Geoffkai/DormHub</footer></span>
+      </button>
+    </li>
+    <li class="slot empty"><b>05</b><span>Not printed yet</span></li>
+    <li class="slot empty"><b>06</b><span>Not printed yet</span></li>
+    <li class="slot empty"><b>07</b><span>Not printed yet</span></li>
+    <li class="slot empty"><b>08</b><span>Not printed yet</span></li>
+  </ol>
+</main>
+
+<section class="next" id="skolartrack">
+  <div class="no" aria-hidden="true">01</div>
+  <div>
+    <h2>SkolarTrack</h2>
+    <p>A scholarship aggregator and application tracker for Filipino students. React, Node with Express, and PostgreSQL, with separate roles for students and admins.</p>
+    <img src="assets/skolartrack.png" alt="SkolarTrack home page listing open scholarships with amounts and deadlines">
+  </div>
+</section>
+
+<script>
+const cards=[...document.querySelectorAll('.card')];
+const set=(c,on)=>{c.setAttribute('aria-pressed',on);c.setAttribute('aria-label',c.getAttribute('aria-label').replace(/Flip to .*$/,on?'Flip to see the front.':'Flip to read the back.'))};
+cards.forEach(c=>c.addEventListener('click',()=>set(c,c.getAttribute('aria-pressed')!=='true')));
+document.getElementById('flipall').addEventListener('click',()=>{const on=!cards.every(c=>c.getAttribute('aria-pressed')==='true');cards.forEach((c,i)=>setTimeout(()=>set(c,on),i*90))});
+</script>
+</body>
+</html>

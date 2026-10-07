@@ -1,0 +1,42 @@
+{
+  "title": "Choose the portfolio's direction",
+  "question": "The safer hand: two familiar portfolio forms, plus the Awwwards standard. Pick one, steer, or re-roll.",
+  "options": [
+    {
+      "id": "safer-posters",
+      "label": "Four Posters",
+      "lineage": "Swiss and Bauhaus poster series",
+      "thesis": "Each project is a full-height poster in one series; the poster you point at opens.",
+      "palette": ["#F2F2EF", "#16130F", "#2B3FD4", "#E8472B", "#F2C230"],
+      "materials": ["flat colour fields", "condensed grotesque type"],
+      "viewport": "Your name across the top, then four colour posters edge to edge, the first one open on a SkolarTrack screenshot.",
+      "risk": "Expanding colour panels are a familiar Awwwards pattern, so the type has to carry it.",
+      "comp": ".impeccable/mocks/decision/safer-posters.png"
+    },
+    {
+      "id": "safer-gallery",
+      "label": "Four Works",
+      "lineage": "white-cube gallery hangs and wall labels",
+      "thesis": "The projects hang as framed works on a gallery wall, each with a museum label.",
+      "palette": ["#F3F3F0", "#E3E3DE", "#141414", "#2440D6"],
+      "materials": ["gallery-white wall", "black frames with white mats"],
+      "viewport": "Wall text with your name on the left; SkolarTrack framed on the right with its label, the next work peeking in.",
+      "risk": "Quiet by design and dependent on strong screenshots, which two of the four projects do not have yet.",
+      "comp": ".impeccable/mocks/decision/safer-gallery.png"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "The Awwwards standard",
+    "lineage": "set against jesperlandberg.com and twks.ch, Sites of the Day in the past two weeks",
+    "thesis": "The monochrome, type-led portfolio that wins Site of the Day, played straight.",
+    "palette": ["#0C0C0C", "#EDEBE6", "#918E88"],
+    "materials": ["oversized grotesque type", "hover image previews"],
+    "viewport": "A project index in large type, a preview image following the cursor, and your full name across the bottom.",
+    "risk": "Looks like many other portfolios by design.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

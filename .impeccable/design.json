@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T00:00:00Z",
+  "title": "Design System: Geoffrey Adam Tomagan",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Backdrop Night",
+        "canonical": "#090C18",
+        "tonalRamp": [
+          "oklch(15% 0.026 272)",
+          "oklch(26% 0.026 272)",
+          "oklch(38% 0.026 272)",
+          "oklch(50% 0.026 272)",
+          "oklch(62% 0.026 272)",
+          "oklch(74% 0.026 272)",
+          "oklch(85% 0.026 272)",
+          "oklch(95% 0.026 272)"
+        ]
+      },
+      "deep": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "canonical": "#0E1324",
+        "tonalRamp": [
+          "oklch(15% 0.035 270)",
+          "oklch(26% 0.035 270)",
+          "oklch(38% 0.035 270)",
+          "oklch(50% 0.035 270)",
+          "oklch(62% 0.035 270)",
+          "oklch(74% 0.035 270)",
+          "oklch(85% 0.035 270)",
+          "oklch(95% 0.035 270)"
+        ]
+      },
+      "fg": {
+        "role": "neutral",
+        "displayName": "Cool White",
+        "canonical": "#ECEEF4",
+        "tonalRamp": [
+          "oklch(15% 0.008 271)",
+          "oklch(26% 0.008 271)",
+          "oklch(38% 0.008 271)",
+          "oklch(50% 0.008 271)",
+          "oklch(62% 0.008 271)",
+          "oklch(74% 0.008 271)",
+          "oklch(85% 0.008 271)",
+          "oklch(95% 0.008 271)"
+        ]
+      },
+      "mute": {
+        "role": "neutral",
+        "displayName": "Slate Mute",
+        "canonical": "#9AA3BA",
+        "tonalRamp": [
+          "oklch(15% 0.035 269)",
+          "oklch(26% 0.035 269)",
+          "oklch(38% 0.035 269)",
+          "oklch(50% 0.035 269)",
+          "oklch(62% 0.035 269)",
+          "oklch(74% 0.035 269)",
+          "oklch(85% 0.035 269)",
+          "oklch(95% 0.035 269)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(236, 238, 244, .16)",
+        "tonalRamp": [
+          "oklch(15% 0.008 271)",
+          "oklch(26% 0.008 271)",
+          "oklch(38% 0.008 271)",
+          "oklch(50% 0.008 271)",
+          "oklch(62% 0.008 271)",
+          "oklch(74% 0.008 271)",
+          "oklch(85% 0.008 271)",
+          "oklch(95% 0.008 271)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Azure",
+        "canonical": "#4D8DFF",
+        "tonalRamp": [
+          "oklch(15% 0.182 261)",
+          "oklch(26% 0.182 261)",
+          "oklch(38% 0.182 261)",
+          "oklch(50% 0.182 261)",
+          "oklch(62% 0.182 261)",
+          "oklch(74% 0.182 261)",
+          "oklch(85% 0.182 261)",
+          "oklch(95% 0.182 261)"
+        ]
+      },
+      "blue-ink": {
+        "role": "primary",
+        "displayName": "Azure Ink",
+        "canonical": "#07122B",
+        "tonalRamp": [
+          "oklch(15% 0.053 264)",
+          "oklch(26% 0.053 264)",
+          "oklch(38% 0.053 264)",
+          "oklch(50% 0.053 264)",
+          "oklch(62% 0.053 264)",
+          "oklch(74% 0.053 264)",
+          "oklch(85% 0.053 264)",
+          "oklch(95% 0.053 264)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "name": {
+        "displayName": "Name",
+        "purpose": "The full name across the viewport in the hero and as the footer mark. 14.5vw and wrapping below 960px."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "One section heading per section."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Project titles."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "The single About statement; the contact email shares its weight."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Entry headings in a ruled, dated list."
+      },
+      "item": {
+        "displayName": "Item",
+        "purpose": "Entries of a plain list such as skills."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The one sentence under a section heading, in Slate Mute, max 46ch. Also the hero intro and index names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Project descriptions, max 46ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, fact rows, column headings, footer."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Figure captions and the kind beside each index name."
+      }
+    },
+    "shadows": [
+      {
+        "name": "media-ring",
+        "value": "0 0 0 1px rgba(236, 238, 244, .16)",
+        "purpose": "A hairline ring around screenshots. The only box-shadow in the system; it acts as a border."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The one easing for every transition and entrance."
+      },
+      {
+        "name": "press",
+        "value": ".25s",
+        "purpose": "Button lift and colour change."
+      },
+      {
+        "name": "hover",
+        "value": ".3s",
+        "purpose": "Link and index row colour change."
+      },
+      {
+        "name": "draw",
+        "value": ".5s to .6s",
+        "purpose": "Underlines drawing from the left; navigation hiding."
+      },
+      {
+        "name": "reveal",
+        "value": "1.1s",
+        "purpose": "Section headings rising from behind a mask, once."
+      },
+      {
+        "name": "hero-entrance",
+        "value": "portrait 1.6s, name 1.2s after .15s, details .9s from .55s in .09s steps",
+        "purpose": "Page load sequence in the hero."
+      },
+      {
+        "name": "scrub",
+        "value": "linear, scroll-linked",
+        "purpose": "Portrait drift and dim, name rise, statement words brightening, pinned project sinking to scale .94 and opacity .25."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all animation and transition off",
+        "purpose": "Applied under prefers-reduced-motion and with the ?still query."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "one-column",
+        "value": "max-width: 959px"
+      },
+      {
+        "name": "narrow",
+        "value": "max-width: 520px"
+      },
+      {
+        "name": "pinned-work",
+        "value": "min-width: 960px and min-height: 701px"
+      },
+      {
+        "name": "short-window",
+        "value": "min-width: 960px and max-height: 700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one contact action in a view.",
+      "html": "<div class=\"ds-wrap-a\"><button class=\"ds-btn\" type=\"button\">Copy email</button></div>",
+      "css": ".ds-wrap-a { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; } .ds-btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 26px; border-radius: 999px; border: 1px solid var(--blue, #4D8DFF); background: var(--blue, #4D8DFF); color: var(--blue-ink, #07122B); font: inherit; font-size: 16px; font-weight: 600; line-height: 1.2; white-space: nowrap; cursor: pointer; transition: transform .25s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-btn:hover { transform: translateY(-2px); } .ds-btn:active { transform: scale(.98); } .ds-btn:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "A project's main outbound action and secondary contact links.",
+      "html": "<div class=\"ds-wrap-b\"><a class=\"ds-btn-line\" href=\"#\">Open live site</a></div>",
+      "css": ".ds-wrap-b { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; } .ds-btn-line { display: inline-flex; align-items: center; justify-content: center; padding: 13px 26px; border-radius: 999px; border: 1px solid rgba(236, 238, 244, .45); background: transparent; color: var(--fg, #ECEEF4); font-size: 16px; font-weight: 600; line-height: 1.2; white-space: nowrap; text-decoration: none; transition: transform .25s var(--ease, cubic-bezier(.16, 1, .3, 1)), border-color .25s var(--ease, cubic-bezier(.16, 1, .3, 1)), color .25s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-btn-line:hover { transform: translateY(-2px); border-color: var(--blue, #4D8DFF); color: var(--blue, #4D8DFF); } .ds-btn-line:active { transform: scale(.98); } .ds-btn-line:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "The secondary action beside a button, and links inside prose.",
+      "html": "<div class=\"ds-wrap-c\"><a class=\"ds-link\" href=\"#\">Source on GitHub</a></div>",
+      "css": ".ds-wrap-c { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; } .ds-link { color: inherit; text-decoration: underline; text-decoration-color: rgba(236, 238, 244, .4); text-decoration-thickness: 1px; text-underline-offset: 5px; transition: color .3s var(--ease, cubic-bezier(.16, 1, .3, 1)), text-decoration-color .3s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-link:hover { color: var(--blue, #4D8DFF); text-decoration-color: var(--blue, #4D8DFF); } .ds-link:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed top bar. In the build it has no background and its white text is blended with difference; the ground here is only the preview canvas.",
+      "html": "<header class=\"ds-nav\"><a href=\"#\">Geoffrey Adam Tomagan</a><nav><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: center; height: 76px; padding: 0 clamp(16px, 2.8vw, 40px); background: var(--night, #090C18); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); font-size: 15px; font-weight: 500; color: #fff; } .ds-nav a { position: relative; padding: 8px 0; color: inherit; text-decoration: none; } .ds-nav nav { display: flex; gap: clamp(18px, 2.4vw, 34px); } .ds-nav nav a::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-nav nav a:hover::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Index Rows",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "A ruled list of links: name at the left, kind at the right.",
+      "html": "<ul class=\"ds-index\"><li><a href=\"#\"><b>SkolarTrack</b><span>Web app</span></a></li><li><a href=\"#\"><b>AntiDoomScroll</b><span>Extension</span></a></li><li><a href=\"#\"><b>Pathfinder-8</b><span>Game</span></a></li></ul>",
+      "css": ".ds-index { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; margin: 0; list-style: none; max-width: 348px; } .ds-index a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-top: 1px solid var(--rule, rgba(236, 238, 244, .16)); color: inherit; text-decoration: none; transition: color .3s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-index b { font-size: clamp(17px, 1.32vw, 20px); font-weight: 500; letter-spacing: -.01em; transition: transform .5s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-index span { font-size: 14px; color: var(--mute, #9AA3BA); } .ds-index a:hover { color: var(--blue, #4D8DFF); } .ds-index a:hover b { transform: translateX(8px); } .ds-index a:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Project Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Project title with its kind on the same baseline at the far right, in azure.",
+      "html": "<header class=\"ds-case-head\"><h3>SkolarTrack</h3><p>Full-stack web app</p></header>",
+      "css": ".ds-case-head { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; } .ds-case-head h3 { margin: 0; font-size: clamp(40px, 5.4vw, 84px); font-weight: 600; letter-spacing: -.04em; line-height: .95; } .ds-case-head p { margin: 0; font-size: 17px; color: var(--blue, #4D8DFF); }"
+    },
+    {
+      "name": "Screenshot Frame",
+      "kind": "custom",
+      "refersTo": "shot",
+      "description": "A 6px-cornered frame with a hairline ring holding a real screenshot, with a one-sentence caption.",
+      "html": "<figure class=\"ds-figure\"><div class=\"ds-shot\"></div><figcaption>The public scholarship list on the live site.</figcaption></figure>",
+      "css": ".ds-figure { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; margin: 0; } .ds-shot { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: var(--deep, #0E1324); box-shadow: 0 0 0 1px var(--rule, rgba(236, 238, 244, .16)); } .ds-figure figcaption { margin-top: 12px; font-size: 14px; color: var(--mute, #9AA3BA); }"
+    },
+    {
+      "name": "Fact Rows",
+      "kind": "custom",
+      "refersTo": "fact-row",
+      "description": "A definition list with a fixed label column and a hairline above each row.",
+      "html": "<dl class=\"ds-facts\"><div><dt>Stack</dt><dd>React, Vite, Node.js, Express, PostgreSQL</dd></div><div><dt>Year</dt><dd>2026, in active development</dd></div></dl>",
+      "css": ".ds-facts { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; margin: 0; max-width: 480px; } .ds-facts div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding: 11px 0; border-top: 1px solid var(--rule, rgba(236, 238, 244, .16)); font-size: 15px; } .ds-facts dt { color: var(--mute, #9AA3BA); } .ds-facts dd { margin: 0; }"
+    },
+    {
+      "name": "Dated List",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Rows split 3/9: a muted date, then a title and one supporting line.",
+      "html": "<ol class=\"ds-dated\"><li><span>Present</span><div><h3>BS Computer Science</h3><p>University of the Philippines Tacloban. Third year.</p></div></li><li><span>2024</span><div><h3>Senior high school</h3><p>Caloocan City Science High School. Class of 2024.</p></div></li></ol>",
+      "css": ".ds-dated { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; margin: 0; list-style: none; } .ds-dated li { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--rule, rgba(236, 238, 244, .16)); } .ds-dated span { font-size: 16px; color: var(--mute, #9AA3BA); font-variant-numeric: tabular-nums; } .ds-dated h3 { margin: 0; font-size: clamp(24px, 2.6vw, 38px); font-weight: 500; letter-spacing: -.025em; line-height: 1.1; } .ds-dated p { margin: 8px 0 0; font-size: 17px; color: var(--mute, #9AA3BA); max-width: 56ch; }"
+    },
+    {
+      "name": "Email Line",
+      "kind": "custom",
+      "refersTo": "statement",
+      "description": "The address set large; a 2px underline draws from the left on hover.",
+      "html": "<p class=\"ds-mail\"><a href=\"#\">tomagan.geoffreyadam@gmail.com</a></p>",
+      "css": ".ds-mail { background: var(--night, #090C18); color: var(--fg, #ECEEF4); font-family: var(--font, \"Geist\", ui-sans-serif, system-ui, sans-serif); padding: 24px; margin: 0; font-size: clamp(21px, 4.6vw, 68px); font-weight: 500; letter-spacing: -.035em; line-height: 1.1; overflow-wrap: anywhere; } .ds-mail a { color: inherit; text-decoration: none; padding-bottom: .06em; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .6s var(--ease, cubic-bezier(.16, 1, .3, 1)), color .3s var(--ease, cubic-bezier(.16, 1, .3, 1)); } .ds-mail a:hover { background-size: 100% 2px; color: var(--blue, #4D8DFF); } .ds-mail a:focus-visible { outline: 2px solid var(--blue, #4D8DFF); outline-offset: 4px; border-radius: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Studio Backdrop",
+    "overview": "The page is the photograph, continued. The ground is the dark navy of the studio backdrop behind the portrait, so the picture has no edge: it is feathered on its sides and top and fades out below the chest, and the page simply carries on in the same colour. Everything else is set directly on that ground. There are no panels, no tinted sections and no second surface colour behind text.\n\nThe voice is one typeface at two extremes. Geist is set very large and tight for the name, the section headings and the project titles, and small and quiet for everything that explains them. Structure comes from hairline rules and from space, never from boxes. One azure is the only colour that is not navy or cool white, and it marks things you can act on.\n\nThe site is a single dark theme by design, because a light ground would cut the portrait out of its own backdrop. Motion follows the same restraint: lines rise from behind a mask, things ease out and settle, and all of it switches off under reduced motion.",
+    "keyCharacteristics": [
+      "One ground colour for the whole page, taken from the portrait's backdrop.",
+      "One typeface, Geist, at very large display sizes and small text sizes with little in between.",
+      "Hairline rules (1px, 16% cool white) separate rows; nothing is boxed.",
+      "One azure accent, reserved for actions and their hover states.",
+      "Two radii only: pills for controls, 6px for media.",
+      "Real screenshots are the only large light areas on the page."
+    ],
+    "rules": [
+      {
+        "name": "The One Ground Rule",
+        "body": "Every section sits on Backdrop Night. A section never gets its own background, tint or gradient wash; separation is a hairline or space.",
+        "section": "colors"
+      },
+      {
+        "name": "The Azure Means Action Rule",
+        "body": "Azure appears on things you can press or have just hovered, plus the project kind line. It is never used for decoration, large fills or body text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Extremes Rule",
+        "body": "A line of type is either a tight display line (weight 600 or 500, negative tracking, line-height at or under 1.25) or quiet text between 14px and 20px. Weight 700 and weight 300 are loaded but unused; no text is set in uppercase and nothing is letter-spaced wider than normal.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every heading, label and button is written in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Surface Rule",
+        "body": "Nothing floats. If something needs to be in front, it covers what is behind it edge to edge on Backdrop Night; it does not get a shadow, a blur or a raised panel.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every section on Backdrop Night and separate content with a hairline or with space.",
+      "Do use azure only for actions, hover states, focus, selection and the project kind line.",
+      "Do make every control a full pill and every piece of media 6px-cornered.",
+      "Do set headings tight and large in weight 600 or 500, and explanatory text between 14px and 20px.",
+      "Do keep text columns to 46ch for leads and descriptions and 56ch for supporting lines.",
+      "Do show real screenshots with a caption that says what they are.",
+      "Do use the one house ease, and give every animated element a visible resting state without script and under reduced motion.",
+      "Do keep pinned layouts behind the width and height conditions so no link becomes unreachable."
+    ],
+    "donts": [
+      "Don't add a light theme or a section with its own background colour; the ground is the portrait's backdrop.",
+      "Don't put content in cards, panels or raised surfaces.",
+      "Don't add drop shadows, glows or blurs. The 1px ring on screenshots is the only box-shadow.",
+      "Don't introduce a second accent colour or a second typeface.",
+      "Don't use icons; every control is labelled in words.",
+      "Don't set text in uppercase or with widened letter-spacing.",
+      "Don't put a bar or fill behind the navigation.",
+      "Don't give the hero portrait a frame, a border or a rounded crop; it dissolves into the ground."
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geoffrey Adam Tomagan - Network map</title>
+<link rel="stylesheet" href="fonts/overpass.css">
+<style>
+:root{--ground:#ECEFF1;--ink:#10141A;--s:#E0312B;--a:#F0A500;--p:#1F5BD8;--d:#0F8F5C;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ground);color:var(--ink);font-family:"Overpass",system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+::selection{background:var(--ink);color:#fff}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--p);outline-offset:3px;border-radius:4px}
+
+.hero{position:relative;height:100dvh;min-height:780px;max-height:960px;overflow:hidden}
+.map{position:absolute;inset:0;width:100%;height:100%}
+
+.bullet{display:inline-grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;color:#fff;font-weight:800;font-size:14px;line-height:1;padding-top:2px}
+.bullet.s{background:var(--s)}.bullet.a{background:var(--a);color:var(--ink)}.bullet.p{background:var(--p)}.bullet.d{background:var(--d)}
+
+.nav{position:absolute;top:40px;right:48px;z-index:2;display:flex;align-items:center;gap:22px;font-size:15px;font-weight:600}
+.nav a{display:flex;align-items:center;gap:8px;text-decoration:none;padding:6px 0}
+.nav a:hover span:last-child{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.nav .contact{background:var(--ink);color:#fff;padding:10px 18px 8px;border-radius:4px;transition:transform .2s var(--ease)}
+.nav .contact:hover{transform:translateY(-2px)}
+.nav .contact:active{transform:translateY(0)}
+
+.sign{position:absolute;left:48px;top:40px;z-index:2;width:min(580px,calc(100% - 96px));background:var(--ink);color:#fff;padding:14px 28px 26px;border-radius:4px}
+.sign::before{content:"";display:block;height:3px;background:#fff;margin-bottom:22px}
+.sign h1{font-size:44px;font-weight:800;letter-spacing:-.015em;line-height:1.02}
+.sign .role{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:19px;font-weight:700}
+.sign .role b{margin-left:8px;font-weight:700}
+.sign p{margin-top:10px;font-size:16px;line-height:1.5;color:#C9CED4;max-width:50ch}
+
+.key{position:absolute;left:48px;bottom:36px;z-index:2;font-size:14px;font-weight:600}
+.key h2{font-size:14px;font-weight:800;margin-bottom:10px}
+.key li{display:flex;align-items:center;gap:10px;list-style:none;margin-top:8px}
+.key i{flex:none;display:block;width:18px;height:18px;border-radius:50%;background:#fff;border:3.5px solid var(--ink)}
+.key i.ic{width:18px;height:30px;border-radius:9px}
+.key i.pl{border-style:dashed;border-width:2.5px;background:transparent}
+
+.line{fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.line.s{stroke:var(--s)}.line.a{stroke:var(--a)}.line.p{stroke:var(--p)}.line.d{stroke:var(--d)}
+.line.planned{stroke-dasharray:14 16;stroke-linecap:butt;opacity:.55}
+.stop{fill:#fff;stroke:var(--ink);stroke-width:3.5}
+.stop.planned{fill:var(--ground);stroke-dasharray:4 4;stroke-width:2.5}
+.label{font-size:15px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--ground);stroke-width:6px;stroke-linejoin:round}
+.label.big{font-size:17px;font-weight:800}
+.label.muted{fill:#4A525C}
+a .label{font-weight:800;fill:var(--p)}
+.lname{font-size:18px;font-weight:800;fill:var(--ink);paint-order:stroke;stroke:var(--ground);stroke-width:6px;stroke-linejoin:round}
+.lbul{font-size:15px;font-weight:800;fill:#fff}
+.map [data-line]{transition:opacity .3s var(--ease)}
+.map[data-focus] [data-line]{opacity:.14}
+.map[data-focus="s"] [data-line~="s"],.map[data-focus="a"] [data-line~="a"],.map[data-focus="p"] [data-line~="p"],.map[data-focus="d"] [data-line~="d"]{opacity:1}
+
+@media (prefers-reduced-motion:no-preference){
+  html:not(.shot) .line.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.3s var(--ease) forwards}
+  html:not(.shot) .line.a{animation-delay:.15s}
+  html:not(.shot) .line.p{animation-delay:.4s}
+  html:not(.shot) .line.s{animation-delay:.65s}
+  html:not(.shot) .line.d{animation-delay:.9s}
+  html:not(.shot) .stops,html:not(.shot) .line.planned{animation:rise .6s 1.7s var(--ease) both}
+  html:not(.shot) .key{animation:rise .6s 2.1s var(--ease) both}
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{from{opacity:0}to{opacity:1}}
+
+.route{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start;padding:96px 48px 120px;border-top:3px solid var(--ink)}
+.route h2{display:flex;align-items:center;gap:16px;font-size:56px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.route h2 .bullet{width:52px;height:52px;font-size:28px;padding-top:4px}
+.route p{margin-top:20px;font-size:18px;line-height:1.55;max-width:46ch}
+.strip{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;list-style:none;font-weight:700;font-size:15px}
+.strip::before{content:"";position:absolute;left:9px;right:12%;top:2px;height:14px;background:var(--s);border-radius:7px}
+.strip li{position:relative;padding-top:34px}
+.strip li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:#fff;border:3.5px solid var(--ink)}
+.route .links{display:flex;gap:28px;margin-top:40px;font-weight:700}
+.route .links a{text-underline-offset:5px;text-decoration-thickness:2px}
+.route figure{border:3px solid var(--ink);border-radius:4px;overflow:hidden;background:#fff}
+.route img{display:block;width:100%;height:auto}
+
+@media (max-width:900px){
+  .hero{height:auto;max-height:none;min-height:0;padding:16px 16px 0;overflow:visible}
+  .nav,.sign,.key{position:static}
+  .nav{flex-wrap:wrap;gap:12px 18px;margin-bottom:16px}
+  .sign{width:100%}
+  .sign h1{font-size:34px}
+  .map{position:static;height:auto;aspect-ratio:1440/900;margin-top:8px}
+  .key{padding:8px 0 32px}
+  .route{grid-template-columns:1fr;padding:56px 16px 72px;gap:32px}
+  .route h2{font-size:38px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="nav" aria-label="Lines">
+    <a href="#skolartrack" data-focus="s"><span class="bullet s">S</span><span>SkolarTrack</span></a>
+    <a href="#antidoomscroll" data-focus="a"><span class="bullet a">A</span><span>AntiDoomScroll</span></a>
+    <a href="#pathfinder" data-focus="p"><span class="bullet p">P</span><span>Pathfinder-8</span></a>
+    <a href="#dormhub" data-focus="d"><span class="bullet d">D</span><span>DormHub</span></a>
+    <a class="contact" href="https://github.com/Geoffkai">Contact</a>
+  </nav>
+
+  <div class="sign">
+    <h1>Geoffrey Adam Tomagan</h1>
+    <div class="role"><span class="bullet s">S</span><span class="bullet a">A</span><span class="bullet p">P</span><span class="bullet d">D</span><b>Developer. Four lines in service.</b></div>
+    <p>Computer science student at UP Tacloban. Four projects, mapped by the skills they share.</p>
+  </div>
+
+  <svg class="map" id="map" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="mapTitle mapDesc">
+    <title id="mapTitle">Project network map</title>
+    <desc id="mapDesc">Four lines, one per project. Stations are features and tools. Lines meet at JavaScript, layered architecture and SQL databases.</desc>
+  </svg>
+
+  <div class="key">
+    <h2>Key</h2>
+    <ul>
+      <li><i></i>Station</li>
+      <li><i class="ic"></i>Interchange, a shared skill</li>
+      <li><i class="pl"></i>Planned</li>
+    </ul>
+  </div>
+</header>
+
+<section class="route" id="skolartrack">
+  <div>
+    <h2><span class="bullet s">S</span>SkolarTrack</h2>
+    <p>A scholarship aggregator and application tracker for Filipino students. React, Node with Express, and PostgreSQL, with separate roles for students and admins.</p>
+    <ol class="strip" aria-label="Application pipeline">
+      <li>Interested</li><li>Applied</li><li>Interview</li><li>Result</li>
+    </ol>
+    <div class="links"><a href="https://skolar-track.vercel.app">Open the live site</a><a href="https://github.com/Geoffkai/SkolarTrack">Read the source</a></div>
+  </div>
+  <figure><img src="assets/skolartrack.png" alt="SkolarTrack home page listing open scholarships with amounts and deadlines"></figure>
+</section>
+
+<script>
+if(new URLSearchParams(location.search).has('shot'))document.documentElement.classList.add('shot');
+const NS='http://www.w3.org/2000/svg',map=document.getElementById('map');
+const el=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);(p||map).appendChild(e);return e};
+function rounded(pts,r){let d=`M${pts[0]}`;for(let i=1;i<pts.length-1;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i],[x2,y2]=pts[i+1],l1=Math.hypot(x1-x0,y1-y0),l2=Math.hypot(x2-x1,y2-y1);d+=`L${x1-(x1-x0)/l1*r} ${y1-(y1-y0)/l1*r}Q${x1} ${y1} ${x1+(x2-x1)/l2*r} ${y1+(y2-y1)/l2*r}`}return d+`L${pts[pts.length-1]}`}
+
+const lines={
+  a:[[140,400],[300,400],[410,510],[590,510],[720,380],[1180,380]],
+  p:[[140,530],[1300,530]],
+  s:[[140,660],[300,660],[410,550],[590,550],[750,710],[1270,710]],
+  d:[[380,830],[810,830],[910,730],[1180,730],[1260,810],[1360,810]]
+};
+const gl=el('g',{class:'lines'});
+for(const k of ['a','p','s','d'])el('path',{class:`line draw ${k}`,'data-line':k,pathLength:1,d:rounded(lines[k],26)},gl);
+el('path',{class:'line planned s','data-line':'s',d:'M1284 710H1372'},gl);
+
+/* [x, y, text, side, anchor, href] */
+const stops={
+  a:[[140,400,'Chrome extension','d','start'],[840,380,'Per-site timer','u'],[1010,380,'Break prompt','u'],[1180,380,'chrome.storage','u']],
+  p:[[140,530,'8-puzzle board','d','start'],[700,530,'A* search','d'],[900,530,'Manhattan heuristic','d'],[1100,530,'Binary min-heap','d'],[1300,530,'Play it live','d','middle','https://geoffkai.github.io/Pathfinder-8/WebGame/']],
+  s:[[140,660,'React + Vite','d','start'],[810,710,'Express API','u'],[920,710,'JWT + roles','u'],[1270,710,'Live on Vercel','d','middle','https://skolar-track.vercel.app']],
+  d:[[380,830,'Java 21','d','start'],[580,830,'Swing desktop UI','d'],[1360,810,'Windows installer','d','end']]
+};
+const gs=el('g',{class:'stops'});
+function label(g,x,y,t,side,anchor,cls,href){
+  const tx=anchor==='start'?x-11:anchor==='end'?x+11:x, ty=side==='u'?y-22:y+34;
+  const parent=href?el('a',{href},g):g;
+  el('text',{class:'label'+(cls?' '+cls:''),x:tx,y:ty,'text-anchor':anchor||'middle'},parent).textContent=t;
+}
+for(const k in stops)for(const[x,y,t,side,anchor,href]of stops[k]){
+  const g=el('g',{'data-line':k},gs);el('circle',{class:'stop',cx:x,cy:y,r:9},g);label(g,x,y,t,side,anchor,'',href);
+}
+/* interchanges: [x, yTop, yBottom, text, side, lines] */
+for(const[x,y1,y2,t,side,ls]of[[500,510,550,'JavaScript','u','a p s'],[1010,710,730,'Layered architecture','d','s d'],[1160,710,730,'SQL database','u','s d']]){
+  const g=el('g',{'data-line':ls},gs);
+  el('rect',{class:'stop',x:x-11,y:y1-11,width:22,height:y2-y1+22,rx:11},g);
+  label(g,x,side==='u'?y1:y2,t,side,'middle','big');
+}
+const gp=el('g',{'data-line':'s'},gs);
+el('circle',{class:'stop planned',cx:1384,cy:710,r:9},gp);
+label(gp,1384,710,'Email alerts, planned','u','end','muted');
+for(const[k,letter,name]of[['a','A','AntiDoomScroll'],['p','P','Pathfinder-8'],['s','S','SkolarTrack'],['d','D','DormHub']]){
+  const[x,y]=lines[k][0],g=el('g',{'data-line':k},gs);
+  el('circle',{cx:x+2,cy:y-38,r:13,fill:`var(--${k})`},g);
+  el('text',{class:'lbul',x:x+2,y:y-32.5,'text-anchor':'middle',style:k==='a'?'fill:var(--ink)':''},g).textContent=letter;
+  el('text',{class:'lname',x:x+24,y:y-32},g).textContent=name;
+}
+
+const focus=v=>v?map.setAttribute('data-focus',v):map.removeAttribute('data-focus');
+document.querySelectorAll('.nav [data-focus]').forEach(a=>{
+  a.addEventListener('pointerenter',()=>focus(a.dataset.focus));a.addEventListener('pointerleave',()=>focus());
+  a.addEventListener('focus',()=>focus(a.dataset.focus));a.addEventListener('blur',()=>focus());
+});
+map.querySelectorAll('.line').forEach(p=>{p.addEventListener('pointerenter',()=>focus(p.dataset.line));p.addEventListener('pointerleave',()=>focus())});
+</script>
+</body>
+</html>

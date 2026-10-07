@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio design options</title>
+<style>
+:root{--bg:#F5F5F3;--ink:#16171A;--soft:#55585F;--line:#D9DAD6;--card:#FFFFFF;--accent:#1F4FD8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:84px}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:8px;padding:12px 32px;background:rgba(245,245,243,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+.bar strong{margin-right:8px;font-size:15px}
+.bar a{flex:none;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14px;font-weight:600;text-decoration:none}
+.bar a:hover{border-color:var(--ink)}
+.bar a.new{border-color:var(--accent);color:#163A9E}
+.bar i{flex:none;width:1px;height:22px;margin:0 6px;background:var(--line)}
+
+.intro{max-width:1240px;margin:0 auto;padding:56px 32px 8px}
+.intro h1{font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.intro p{margin-top:16px;font-size:18px;line-height:1.55;max-width:70ch;color:#2B2D31}
+
+.group{max-width:1240px;margin:0 auto;padding:56px 32px 0}
+.group h2{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.group > p{margin-top:8px;font-size:17px;line-height:1.5;color:var(--soft);max-width:72ch}
+
+.design{max-width:1240px;margin:28px auto 0;padding:0 32px}
+.design article{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;padding:24px 28px}
+.num{display:grid;place-items:center;min-width:52px;height:52px;padding:0 12px;border-radius:26px;background:var(--ink);color:#fff;font-size:22px;font-weight:700}
+.head h3{font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.head h3 span{display:inline-block;margin-left:10px;padding:4px 10px;border-radius:999px;background:#E6ECFB;color:#163A9E;font-size:13px;font-weight:700;vertical-align:middle;letter-spacing:0}
+.head p{margin-top:6px;font-size:17px;line-height:1.5;color:#2B2D31;max-width:68ch}
+.open{flex:none;padding:13px 22px;border-radius:10px;background:var(--accent);color:#fff;font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap}
+.open:hover{background:#173FB2}
+.shot{display:block;border-top:1px solid var(--line);background:#EDEDEA}
+.shot img{display:block;width:100%;height:auto}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 26px;border-top:1px solid var(--line)}
+.notes h4{font-size:14px;font-weight:700;color:var(--soft)}
+.notes p{margin-top:6px;font-size:16px;line-height:1.5}
+
+.end{max-width:1240px;margin:0 auto;padding:64px 32px 96px}
+.end h2{font-size:30px;font-weight:700;letter-spacing:-.01em}
+.end p{margin-top:12px;font-size:18px;line-height:1.55;max-width:70ch}
+.end ul{margin:16px 0 0 22px;font-size:17px;line-height:1.7;max-width:72ch}
+
+@media (max-width:760px){
+  .bar{padding:10px 16px}
+  .intro,.group,.end{padding-left:16px;padding-right:16px}
+  .intro h1{font-size:32px}
+  .design{padding:0 16px}
+  .head{grid-template-columns:auto minmax(0,1fr);padding:18px}
+  .open{grid-column:1 / -1;text-align:center}
+  .notes{grid-template-columns:1fr;gap:16px;padding:18px}
+}
+</style>
+</head>
+<body>
+<nav class="bar" aria-label="Jump to a design">
+  <strong>New</strong>
+  <a class="new" href="#d8">8 Badge</a>
+  <a class="new" href="#d9">9 Magazine cover</a>
+  <a class="new" href="#d10">10 Blue record</a>
+  <a class="new" href="#d11">11 Portrait</a>
+  <a class="new" href="#d3b">3B Map in blue</a>
+  <a class="new" href="#d4b">4B Cards in blue</a>
+  <i></i>
+  <strong>Earlier</strong>
+  <a href="#d1">1 Puzzle</a>
+  <a href="#d2">2 Build instructions</a>
+  <a href="#d3">3 Network map</a>
+  <a href="#d4">4 Card album</a>
+  <a href="#d5">5 Posters</a>
+  <a href="#d6">6 Gallery</a>
+  <a href="#d7">7 Awwwards standard</a>
+</nav>
+
+<header class="intro">
+  <h1>Design options for your portfolio</h1>
+  <p>The new designs you asked for are at the top: four built around your photo, then designs 3 and 4 recoloured in the blue from design 2. The seven earlier designs are still below. Each picture is the opening screen of one design. Press <b>Open live preview</b> to try the real page, and tell Claude the number you like.</p>
+</header>
+
+<section class="group">
+  <h2>New: built around your photo</h2>
+  <p>All four take their deep blue from the studio backdrop in your pictures. Three use the barong portrait as the main image, because it is the more formal of the two. The graduation photo shows your old school's name on the sash, so it is cropped close or used small.</p>
+</section>
+
+<section class="design" id="d8"><article>
+  <div class="head">
+    <div class="num">8</div>
+    <div><h3>Lanyard badge</h3><p>Your photo sits on a developer badge that hangs from a lanyard on a bright blue page. The badge swings in when the page loads, tilts as the mouse moves, and flips over when clicked.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/photo-badge.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/photo-badge.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/photo-badge.png" alt="Bright blue page with the name Geoffrey Adam Tomagan in large white type and a white ID badge with his portrait hanging from a lanyard on the right"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>The bluest of the set, friendly, and honest about being a student. The badge is a small moment people remember.</p></div>
+    <div><h4>Trade-off</h4><p>Hanging badges are a current trend on developer sites, so other portfolios use the idea too.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d9"><article>
+  <div class="head">
+    <div class="num">9</div>
+    <div><h3>Magazine cover <span>Claude's pick</span></h3><p>The page is the cover of a magazine named after you. Your portrait is the cover photo, the title runs across the top in blue, and your four projects are the cover headlines.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/photo-cover.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/photo-cover.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/photo-cover.png" alt="Dark page with TOMAGAN in huge blue letters across the top, the barong portrait in the centre, a headline on the left and four project names on the right"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>It looks the most professional, your photo is the centre of attention, and all four projects are on the first screen.</p></div>
+    <div><h4>Trade-off</h4><p>Magazine-style portfolios are a familiar idea. Scroll down in the live preview to see the profile page that uses your graduation photo.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d10"><article>
+  <div class="head">
+    <div class="num">10</div>
+    <div><h3>Blue record sleeve</h3><p>Styled like a classic jazz album cover: your photo tinted entirely in blue on one side, your name in heavy type on the other, and your projects listed as tracks.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/photo-record.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/photo-record.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/photo-record.png" alt="Left half is a blue-tinted close-up of the smiling graduation portrait; right half shows GEOFFREY ADAM TOMAGAN in heavy black and blue type above a track list of four projects"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>Striking and very blue. The tint turns an ordinary studio photo into a design element, and hovering a track swaps in that project's screenshot.</p></div>
+    <div><h4>Trade-off</h4><p>The close crop shows your face very large. It uses the smiling graduation photo; the barong photo can be swapped in.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d11"><article>
+  <div class="head">
+    <div class="num">11</div>
+    <div><h3>Portrait standard</h3><p>The usual Awwwards portrait layout, done cleanly: your photo fading into a dark navy page, your name in very large type across it, and the project list to the side.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/photo-hero.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/photo-hero.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/photo-hero.png" alt="Dark navy page with the barong portrait in the centre fading out at the bottom, the name Geoffrey Adam Tomagan in very large white type across it, and a list of four projects at the right"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>Safe, elegant and quick to understand. This is what most award-winning personal sites with a photo look like.</p></div>
+    <div><h4>Trade-off</h4><p>It is the least original of the four, so it stands out only through polish and motion.</p></div>
+  </div>
+</article></section>
+
+<section class="group">
+  <h2>New: designs 3 and 4 in blue</h2>
+  <p>Both now use the sky blue, black outlines and red, yellow and blue accents of design 2. Design 2 itself is unchanged, since it is the source of the blue. If you meant a different blue, or wanted design 2 changed as well, say so.</p>
+</section>
+
+<section class="design" id="d3b"><article>
+  <div class="head">
+    <div class="num">3B</div>
+    <div><h3>Network map, in blue</h3><p>The same transit map as design 3, on design 2's sky blue. The four lines are now red, yellow, blue and white with black outlines.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/blue-map.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/blue-map.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/blue-map.png" alt="Sky-blue page with a black station sign reading Geoffrey Adam Tomagan and a transit map of four outlined lines in yellow, blue, red and white"></a>
+  <div class="notes">
+    <div><h4>What changed</h4><p>Background, line colours and outlines. Layout, text and hover behaviour are the same as design 3.</p></div>
+    <div><h4>Trade-off</h4><p>Same as design 3: no project screenshots until a visitor clicks.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d4b"><article>
+  <div class="head">
+    <div class="num">4B</div>
+    <div><h3>Card album, in blue</h3><p>The same collector-card album as design 4, with the pink replaced by design 2's sky blue and the cards recoloured to match.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/blue-cards.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/blue-cards.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/blue-cards.png" alt="Sky-blue page titled Series One with four project cards in yellow, white, grey and blue, and four empty dashed slots below"></a>
+  <div class="notes">
+    <div><h4>What changed</h4><p>Background and card colours only. The cards still flip when clicked.</p></div>
+    <div><h4>Trade-off</h4><p>Same as design 4: the empty slots draw attention to how few projects there are.</p></div>
+  </div>
+</article></section>
+
+<section class="group">
+  <h2>Earlier: bold concepts</h2>
+  <p>Each of these turns the whole site into one idea. They are the most memorable, and the least like other portfolios.</p>
+</section>
+
+<section class="design" id="d1"><article>
+  <div class="head">
+    <div class="num">1</div>
+    <div><h3>Sliding puzzle</h3><p>The home page is a sliding puzzle. Its eight tiles are the sections of your site, and it solves itself with the same A* search you wrote for Pathfinder-8.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/model-pick.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/model-pick.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/model-pick.png" alt="Red page with the name Geoffrey Adam Tomagan on the left and a three by three sliding puzzle of white tiles on the right"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>Nobody else can copy it, because it runs on your own project. A client sees working code in the first second.</p></div>
+    <div><h4>Trade-off</h4><p>It is playful. The puzzle has to solve itself quickly so visitors are not kept waiting.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d2"><article>
+  <div class="head">
+    <div class="num">2</div>
+    <div><h3>Build instructions</h3><p>Each project is drawn like a step in a brick instruction booklet, showing the parts it is made of: a React brick on an Express brick on a PostgreSQL base.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/challenger-brick.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/challenger-brick.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/challenger-brick.png" alt="Sky-blue page with the headline Four builds, every piece shown, beside an exploded stack of red, blue and yellow bricks labelled React client, Express API, JWT auth and PostgreSQL"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>It explains what each project is built from at a glance, and everyone recognises the booklet.</p></div>
+    <div><h4>Trade-off</h4><p>The toy look could feel too childish for some employers.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d3"><article>
+  <div class="head">
+    <div class="num">3</div>
+    <div><h3>Network map</h3><p>Your four projects are four coloured transit lines. They cross at the skills they share, such as JavaScript and SQL databases.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/assigned.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/assigned.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/assigned.png" alt="Light grey page with a black station sign reading Geoffrey Adam Tomagan and a transit map of four coloured lines for AntiDoomScroll, Pathfinder-8, SkolarTrack and DormHub"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>It shows your range across four kinds of software in one picture.</p></div>
+    <div><h4>Trade-off</h4><p>Skill maps drawn as subway lines have been done before, and visitors do not see project screenshots until they click.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d4"><article>
+  <div class="head">
+    <div class="num">4</div>
+    <div><h3>Card album</h3><p>Your projects are numbered collector cards in an album. Four are printed, four slots are still empty. Click a card and it flips to show its details.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/challenger-cards.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/challenger-cards.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/challenger-cards.png" alt="Pink page titled Series One with four colourful project cards in an album and four empty dashed slots below"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>The back of each card is a neat place for the technical details a client checks.</p></div>
+    <div><h4>Trade-off</h4><p>It can look like a hobby site, and the empty slots draw attention to how few projects there are.</p></div>
+  </div>
+</article></section>
+
+<section class="group">
+  <h2>Earlier: calmer options</h2>
+  <p>These look more like the portfolios you see on Awwwards. They rely on type, colour and your project screenshots.</p>
+</section>
+
+<section class="design" id="d5"><article>
+  <div class="head">
+    <div class="num">5</div>
+    <div><h3>Four posters</h3><p>Each project is a tall colour poster with its name in huge type. Point at a poster and it widens to show a screenshot and description.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/safer-posters.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/safer-posters.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/safer-posters.png" alt="Page with the name Geoffrey Adam Tomagan above four tall posters in blue, red, yellow and black, each with a project name in large vertical type"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>Bold and graphic, with all four projects visible the moment the page loads.</p></div>
+    <div><h4>Trade-off</h4><p>Expanding colour panels are a pattern other Awwwards sites also use.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d6"><article>
+  <div class="head">
+    <div class="num">6</div>
+    <div><h3>Gallery wall</h3><p>Your projects hang as framed pictures on a white gallery wall, each with a small museum label. Visitors scroll sideways along the wall.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/safer-gallery.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/safer-gallery.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/safer-gallery.png" alt="Light page with the name Geoffrey Adam Tomagan on the left and a framed SkolarTrack screenshot hanging on a gallery wall with a label underneath"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>Calm, clean and professional. The screenshots of your work do the talking.</p></div>
+    <div><h4>Trade-off</h4><p>It needs a good screenshot of every project, and AntiDoomScroll and DormHub do not have one yet.</p></div>
+  </div>
+</article></section>
+
+<section class="design" id="d7"><article>
+  <div class="head">
+    <div class="num">7</div>
+    <div><h3>Awwwards standard</h3><p>Black and white with very large type. A list of your projects, a preview image that follows the mouse, and your full name across the bottom.</p></div>
+    <a class="open" href=".impeccable/mocks/decision/canon.html" target="_blank" rel="noopener">Open live preview</a>
+  </div>
+  <a class="shot" href=".impeccable/mocks/decision/canon.html" target="_blank" rel="noopener"><img src=".impeccable/mocks/decision/canon.png" alt="Black page with a large list of four project names, a tilted screenshot preview and the name Geoffrey Adam Tomagan in giant white type along the bottom"></a>
+  <div class="notes">
+    <div><h4>Why choose it</h4><p>This is the look of recent Awwwards Site of the Day winners such as jesperlandberg.com and twks.ch.</p></div>
+    <div><h4>Trade-off</h4><p>It looks like many other portfolios, so it stands out only through polish and motion.</p></div>
+  </div>
+</article></section>
+
+<footer class="end">
+  <h2>What happens next</h2>
+  <p>Tell Claude the number of the design you want, for example "build number 9". You can also mix ideas, such as "number 9, but with the badge from number 8 in the About section".</p>
+  <ul>
+    <li>These are opening screens only. The full site is built after you choose.</li>
+    <li>The wording is a draft taken from your GitHub pages and can all be changed.</li>
+    <li>Every Contact button points to your GitHub for now.</li>
+    <li>Your two photos were copied into the preview folder. The originals in your project folder are untouched.</li>
+  </ul>
+</footer>
+</body>
+</html>

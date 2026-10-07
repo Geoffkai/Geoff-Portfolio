@@ -1,0 +1,92 @@
+{
+  "title": "Choose the portfolio's direction",
+  "question": "Five opening screens, each built in real code from your own projects. Keep the lead, take another, or re-roll. Three more dealt worlds wait in the re-roll pool.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Network Map",
+      "kicker": "THE ROLL",
+      "lineage": "1970s transit diagrams and station signage",
+      "thesis": "Four projects drawn as four transit lines that meet at the skills they share.",
+      "palette": ["#ECEFF1", "#10141A", "#E0312B", "#F0A500", "#1F5BD8", "#0F8F5C"],
+      "materials": ["enamel station sign", "diagram lines"],
+      "viewport": "A full network map: your name on a station sign, four lines crossing at JavaScript, SQL and layered architecture.",
+      "risk": "Skill subway maps are a known infographic idea, and project screens stay hidden until a station is opened.",
+      "raised": [
+        { "from": "challenger-ink", "raise": "The map answers the pointer: focus one line and the other three dim." },
+        { "from": "seven-segment displays", "raise": "Unbuilt work is drawn as deliberately as built work: planned features appear as dashed stops." },
+        { "from": "woodblock printing", "raise": "The network prints line by line in a fixed order on load, with the key arriving last." }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "Solved by A*",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the sliding 8-puzzle from your own Pathfinder-8",
+      "thesis": "The home page is a sliding puzzle whose tiles are the site, solved live by your own search algorithm.",
+      "palette": ["#CF3A21", "#9E2A16", "#F6F5F1", "#17110E"],
+      "materials": ["moulded plastic tiles", "lacquer-red tray"],
+      "viewport": "Your name on the left and a 3 by 3 board on the right; eight tiles are the sections, and A* slides them home on load.",
+      "risk": "Playful interactive heroes are familiar on developer portfolios, and a puzzle delays reading unless it solves itself fast.",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    },
+    {
+      "id": "challenger-brick",
+      "label": "Build Instructions",
+      "verdict": "wins",
+      "lineage": "brick build-instruction booklets",
+      "thesis": "Each project is an instruction step: the parts it is made of, exploded and clicked together.",
+      "palette": ["#8FC7F0", "#0A0A0B", "#E2231A", "#0F4FC4", "#F7C600", "#B6BCC4"],
+      "materials": ["sky-blue instruction page", "black keyline ink"],
+      "viewport": "Step 1 fills the page: SkolarTrack as a React brick over an Express brick on a PostgreSQL baseplate, beside a parts inventory.",
+      "case": "Beats the map on both counts: everyone knows the booklet, and it shows what each project is made of.",
+      "risk": "Toy grammar can read as a children's product unless the type and keylines stay strict.",
+      "comp": ".impeccable/mocks/decision/challenger-brick.png",
+      "hero": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions.webp"
+    },
+    {
+      "id": "challenger-cards",
+      "label": "Series One",
+      "verdict": "competitive",
+      "lineage": "numbered insert cards and their albums",
+      "thesis": "A numbered card set: four printed, four empty slots, each card flipping to a dense spec on its back.",
+      "palette": ["#F4A7B8", "#1C1420", "#F9D54A", "#35B8A2", "#5B84F0", "#F2793D"],
+      "materials": ["stiff card stock", "grey board backs"],
+      "viewport": "An album page of eight slots, four filled with project cards and one already flipped to its back.",
+      "case": "Holds clarity, since a card back is exactly the spec a client checks, but loses on identification.",
+      "risk": "Reads hobbyist, and the empty slots put what is missing on show.",
+      "comp": ".impeccable/mocks/decision/challenger-cards.png",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-insert-card-numbered-series-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-insert-card-numbered-series.webp"
+    },
+    {
+      "id": "challenger-ink",
+      "label": "Ink Basin",
+      "verdict": "declined",
+      "lineage": "suminagashi ink marbling",
+      "thesis": "The page as a basin of marbled ink that the pointer stirs.",
+      "palette": ["#F4F5F3", "#1B2A4A", "#3A3F45"],
+      "materials": ["marbled ink", "paper-white water"],
+      "viewport": "One continuous fluid surface with text held to a still margin.",
+      "case": "Fuses poorly: a marbled surface says nothing about what you build.",
+      "kept": "A surface that answers the pointer.",
+      "risk": "A fluid simulation would claim graphics skills your projects do not show.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-fluid-ink-basin-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "The Awwwards standard",
+    "thesis": "The monochrome, type-led portfolio that wins Site of the Day, played straight.",
+    "palette": ["#0C0C0C", "#EDEBE6", "#918E88"],
+    "materials": ["oversized grotesque type", "hover image previews"],
+    "viewport": "A project index in large type, a preview image following the cursor, and your full name across the bottom.",
+    "risk": "Looks like many other portfolios by design.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

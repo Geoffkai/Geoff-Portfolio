@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geoffrey Adam Tomagan, developer</title>
+  <meta name="description" content="Geoffrey Adam Tomagan is a third-year computer science student at UP Tacloban who builds websites and full-stack web apps. See five projects you can open and use.">
+  <meta name="theme-color" content="#090C18">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Geoffrey Adam Tomagan, developer">
+  <meta property="og:description" content="Third-year computer science student at UP Tacloban. Websites, full-stack web apps and five projects you can open and use.">
+  <meta property="og:image" content="/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/img/portrait.webp" imagesrcset="/img/portrait-640.webp 640w, /img/portrait.webp 1024w" imagesizes="(max-width: 959px) 100vw, 70vh" fetchpriority="high">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to the work</a>
+
+  <header class="nav">
+    <a class="nav__name" href="#top">Geoffrey Adam Tomagan</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__portrait">
+        <img src="/img/portrait.webp" srcset="/img/portrait-640.webp 640w, /img/portrait.webp 1024w" sizes="(max-width: 959px) 100vw, 70vh" width="1024" height="1280" alt="Geoffrey Adam Tomagan in a white barong with black embroidery, against a dark blue studio backdrop" fetchpriority="high">
+      </div>
+
+      <p class="hero__intro" data-in style="--i:0">Third-year computer science student at UP Tacloban. <span>I build websites and full-stack web apps.</span></p>
+
+      <ul class="hero__index" data-in style="--i:1">
+        <li><a href="#skolartrack"><b>SkolarTrack</b><span>Web app</span></a></li>
+        <li><a href="#antidoomscroll"><b>AntiDoomScroll</b><span>Extension</span></a></li>
+        <li><a href="#pathfinder"><b>Pathfinder-8</b><span>Game</span></a></li>
+        <li><a href="#dormhub"><b>DormHub</b><span>Desktop app</span></a></li>
+        <li><a href="#sopp"><b>Can You Pass SOPP?</b><span>Quiz game</span></a></li>
+      </ul>
+
+      <h1 class="hero__name"><span class="line"><span>Geoffrey Adam Tomagan</span></span></h1>
+
+      <div class="hero__foot" data-in style="--i:2">
+        <p>Open to freelance work and junior roles</p>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="head">
+        <h2 class="display reveal"><span>Selected work</span></h2>
+        <p class="lead">Five projects across the web, the browser and the desktop. Every one can be opened, run or read.</p>
+      </div>
+
+      <div class="stack">
+        <article class="case" id="skolartrack">
+          <div class="case__inner">
+            <header class="case__head">
+              <h3>SkolarTrack</h3>
+              <p class="case__kind">Full-stack web app</p>
+            </header>
+            <figure class="case__media">
+              <div class="shot">
+                <img src="/img/skolartrack.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="SkolarTrack home page: a search box above a table of scholarships with organisation, amount and deadline">
+              </div>
+              <figcaption>The public scholarship list on the live site.</figcaption>
+            </figure>
+            <div class="case__text">
+              <p class="case__desc">A scholarship aggregator and application tracker for Filipino students. It gathers CHED, DOST, foundation and local government scholarships in one searchable list, and each student tracks applications from Interested to Result.</p>
+              <dl class="facts">
+                <div><dt>Stack</dt><dd>React, Vite, Node.js, Express, PostgreSQL</dd></div>
+                <div><dt>Access</dt><dd>JWT logins with bcrypt, separate student and admin roles</dd></div>
+                <div><dt>Year</dt><dd>2026, in active development</dd></div>
+              </dl>
+              <p class="case__links"><a class="btn btn--line" href="https://skolar-track.vercel.app" target="_blank" rel="noopener">Open live site</a><a class="link" href="https://github.com/Geoffkai/SkolarTrack" target="_blank" rel="noopener">Source on GitHub</a></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" id="antidoomscroll">
+          <div class="case__inner">
+            <header class="case__head">
+              <h3>AntiDoomScroll</h3>
+              <p class="case__kind">Chrome extension</p>
+            </header>
+            <figure class="case__media">
+              <div class="shot-trio">
+                <div class="shot shot--prompt"><img src="/img/antidoom-prompt.webp" width="1760" height="617" loading="lazy" decoding="async" alt="AntiDoomScroll break prompt reading Take a Break, with buttons to leave, snooze for one minute or close"></div>
+                <div class="shot shot--panel"><img src="/img/antidoom-options.webp" width="690" height="897" loading="lazy" decoding="async" alt="AntiDoomScroll settings: switches for Facebook, Instagram, TikTok and YouTube and a timer set to 15 minutes"></div>
+                <div class="shot shot--page"><img src="/img/antidoom-context.webp" width="1280" height="800" loading="lazy" decoding="async" alt="The break prompt as it appears on a page: centred on a dark overlay that covers everything behind it"></div>
+              </div>
+              <figcaption>The break prompt up close, the settings panel, and the prompt covering a whole page. All three are rendered from the extension's own code.</figcaption>
+            </figure>
+            <div class="case__text">
+              <p class="case__desc">A Chrome extension that interrupts endless scrolling. Pick the sites and a time limit. When the time is up, a full-page prompt asks you to take a break, snooze for a minute, or close it.</p>
+              <dl class="facts">
+                <div><dt>Stack</dt><dd>JavaScript, Chrome extension APIs, Manifest V3</dd></div>
+                <div><dt>Works on</dt><dd>Facebook, Instagram, TikTok and YouTube</dd></div>
+                <div><dt>Year</dt><dd>2026</dd></div>
+              </dl>
+              <p class="case__links"><a class="btn btn--line" href="https://github.com/Geoffkai/AntiDoomScroll" target="_blank" rel="noopener">Source on GitHub</a></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" id="pathfinder">
+          <div class="case__inner">
+            <header class="case__head">
+              <h3>Pathfinder-8</h3>
+              <p class="case__kind">Puzzle game with A* solver</p>
+            </header>
+            <figure class="case__media">
+              <div class="shot shot--center">
+                <img src="/img/pathfinder.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Pathfinder-8 board with wooden number tiles and a readout of nodes explored and solve time">
+              </div>
+              <figcaption>The solver mid-run: 798 states explored in 25 ms.</figcaption>
+            </figure>
+            <div class="case__text">
+              <p class="case__desc">An 8-puzzle you can play in the browser. If you get stuck, the built-in solver finds the shortest solution with A* search and plays it back, reporting how many states it explored.</p>
+              <dl class="facts">
+                <div><dt>Stack</dt><dd>JavaScript, HTML and CSS</dd></div>
+                <div><dt>Solver</dt><dd>A* search, Manhattan distance heuristic, binary min-heap</dd></div>
+                <div><dt>Year</dt><dd>2025</dd></div>
+              </dl>
+              <p class="case__links"><a class="btn btn--line" href="https://geoffkai.github.io/Pathfinder-8/WebGame/" target="_blank" rel="noopener">Play the game</a><a class="link" href="https://github.com/Geoffkai/Pathfinder-8" target="_blank" rel="noopener">Source on GitHub</a></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" id="dormhub">
+          <div class="case__inner">
+            <header class="case__head">
+              <h3>DormHub</h3>
+              <p class="case__kind">Java desktop app</p>
+            </header>
+            <figure class="case__media">
+              <div class="shot shot--wide">
+                <img src="/img/dormhub.webp" width="1600" height="900" loading="lazy" decoding="async" alt="DormHub manager dashboard layout with a side menu and panels for total residents, pending dorm pass requests, room occupancy and recent activity">
+              </div>
+              <figcaption>The manager dashboard design from the app, shown without data.</figcaption>
+            </figure>
+            <div class="case__text">
+              <p class="case__desc">A desktop app for running a dormitory. A manager keeps residents, rooms, room assignments, payments and dorm passes in one place, with CSV import and export. Built with a team.</p>
+              <dl class="facts">
+                <div><dt>Stack</dt><dd>Java 21, Swing, MySQL, JDBC</dd></div>
+                <div><dt>Structure</dt><dd>View, controller, service and DAO layers</dd></div>
+                <div><dt>Year</dt><dd>2026, Windows installer included</dd></div>
+              </dl>
+              <p class="case__links"><a class="btn btn--line" href="https://github.com/Geoffkai/DormHub" target="_blank" rel="noopener">Source on GitHub</a></p>
+            </div>
+          </div>
+        </article>
+        <article class="case" id="sopp">
+          <div class="case__inner">
+            <header class="case__head">
+              <h3>Can You Pass SOPP?</h3>
+              <p class="case__kind">Java quiz game</p>
+            </header>
+            <figure class="case__media">
+              <div class="shot shot--wide">
+                <img src="/img/sopp.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Main menu of the quiz game Can You Pass Survey of Programming Paradigms, with buttons for Play, How to Play, School Record and Exit">
+              </div>
+              <figcaption>The game's main menu.</figcaption>
+            </figure>
+            <div class="case__text">
+              <p class="case__desc">A quiz game for the Survey of Programming Paradigms course. Pick a classmate character, choose theory or programming questions, and climb five levels from procedural and functional to object-oriented and event-driven programming. Built with a classmate.</p>
+              <dl class="facts">
+                <div><dt>Stack</dt><dd>Java 21, Swing, Maven, JSON question banks</dd></div>
+                <div><dt>Game</dt><dd>Five levels, two question categories, score records and sound</dd></div>
+                <div><dt>Year</dt><dd>2025, Windows executable included</dd></div>
+              </dl>
+              <p class="case__links"><a class="btn btn--line" href="https://github.com/Geoffkai/CanYouPassSOPP" target="_blank" rel="noopener">Source on GitHub</a></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="display reveal"><span>About</span></h2>
+      <div class="about__grid">
+        <figure class="about__photo">
+          <img src="/img/about.webp" width="1024" height="1280" loading="lazy" decoding="async" alt="Geoffrey Adam Tomagan smiling in a green graduation gown with a gold sash">
+        </figure>
+        <div class="about__text">
+          <p class="statement" data-words>I'm Geoffrey, a third-year computer science student at the University of the Philippines Tacloban. I build things people can open and use, from a scholarship tracker to a puzzle that solves itself.</p>
+          <div class="about__cols">
+            <p>I work mainly in JavaScript and Java. On the web I use React with Node, Express and PostgreSQL. On the desktop I have built with Java Swing and MySQL.</p>
+            <p>I'm open to freelance work on websites, landing pages and full-stack web apps, fixes on existing sites, and junior software developer roles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="head">
+        <h2 class="display reveal"><span>Skills and tools</span></h2>
+        <p class="lead">Everything listed here was used in one of the five projects above.</p>
+      </div>
+      <div class="skills__grid">
+        <div>
+          <h3>Languages</h3>
+          <ul><li>JavaScript</li><li>Java</li><li>SQL</li><li>HTML and CSS</li></ul>
+        </div>
+        <div>
+          <h3>Front end</h3>
+          <ul><li>React</li><li>Vite</li><li>React Router</li><li>Responsive layout</li></ul>
+        </div>
+        <div>
+          <h3>Back end and data</h3>
+          <ul><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>MySQL</li><li>JWT auth with roles</li></ul>
+        </div>
+        <div>
+          <h3>Tools and practice</h3>
+          <ul><li>Git and GitHub</li><li>Vercel and Railway</li><li>Chrome extension APIs</li><li>Java Swing</li><li>A* search</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="edu" id="education">
+      <h2 class="display reveal"><span>Education</span></h2>
+      <ol class="edu__list">
+        <li>
+          <span class="when">Present</span>
+          <div><h3>BS Computer Science</h3><p>University of the Philippines Tacloban. Third year.</p></div>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <div><h3>Senior high school</h3><p>Caloocan City Science High School. Class of 2024.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="certs" id="certifications">
+      <h2 class="display reveal"><span>Certifications</span></h2>
+      <ul class="certs__grid">
+        <li>
+          <h3>JavaScript Algorithms and Data Structures</h3>
+          <p>freeCodeCamp</p>
+          <p><a class="link" href="https://github.com/Geoffkai/freecodecamp-javascript-certification" target="_blank" rel="noopener">My solutions on GitHub</a></p>
+        </li>
+        <li>
+          <h3>Responsive Web Design</h3>
+          <p>freeCodeCamp</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="display reveal"><span>Have a project or a role in mind?</span></h2>
+      <p class="lead">I'm open to freelance work on websites and full-stack web apps, fixes on existing sites, and junior software developer roles.</p>
+      <p class="contact__mail">
+        <a href="mailto:tomagan.geoffreyadam@gmail.com">tomagan.geoffreyadam@gmail.com</a>
+      </p>
+      <div class="contact__row">
+        <button class="btn" type="button" id="copy" data-email="tomagan.geoffreyadam@gmail.com">Copy email</button>
+        <a class="btn btn--line" href="https://github.com/Geoffkai" target="_blank" rel="noopener">GitHub</a>
+        <span class="contact__status" id="copy-status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="foot__mark" aria-hidden="true">Geoffrey Adam Tomagan</p>
+    <div class="foot__row">
+      <span>&copy; 2026 Geoffrey Adam Tomagan</span>
+      <a class="link" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
