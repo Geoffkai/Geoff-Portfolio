@@ -39,7 +39,7 @@ Visitors arrive from a freelance profile, a LinkedIn or GitHub link, or a job ap
 - Featured projects, confirmed by Geoffrey: SkolarTrack, AntiDoomScroll, Pathfinder-8, DormHub, and CanYouPassSOPP (added at his request on 2026-10-08).
 - Must work as a static site with no backend.
 - Sections he asked for: projects, About me, Skills and tools, Education, Certifications, Contact. No Services section.
-- Contact: email (tomagan.geoffreyadam@gmail.com) plus LinkedIn and GitHub. His LinkedIn address has not been supplied yet; show no LinkedIn link until it is.
+- Contact: email (tomagan.geoffreyadam@gmail.com) plus GitHub (github.com/Geoffkai), LinkedIn (linkedin.com/in/geoffrey-adam-tomagan-238034286) and Facebook (facebook.com/geoffrey.tomagan.1), supplied 2026-10-08.
 - His portrait leads the site.
 - Undecided: custom domain, whether a CV download is offered.
 

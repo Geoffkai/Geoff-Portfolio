@@ -11,13 +11,13 @@ Scope: the single-page portfolio. Visitor mode: Experience.
 
 Audience and job: freelance clients, agencies and employers comparing candidates. They decide in seconds whether to keep reading, check real projects, then make contact.
 
-Content, confirmed by Geoffrey on 2026-10-08: hero with his portrait, five projects (SkolarTrack, AntiDoomScroll, Pathfinder-8, DormHub, and Can You Pass SOPP?, added at his request), About me, Skills and tools, Education, Certifications (two freeCodeCamp certificates he says he has earned), Contact (email, GitHub, LinkedIn once he supplies the address). No Services section.
+Content, confirmed by Geoffrey on 2026-10-08: hero with his portrait, five projects (SkolarTrack, AntiDoomScroll, Pathfinder-8, DormHub, and Can You Pass SOPP?, added at his request), About me, Skills and tools, Education, Certifications (two freeCodeCamp certificates he says he has earned), Contact (email, GitHub, LinkedIn, Facebook). No Services section.
 
 Chosen direction: design 11, "Portrait", the category-standard portrait layout, picked by him over twelve other options. Reference: `.impeccable/mocks/decision/photo-hero.png` (coded preview, critique reference only). Memorable moment: the name set at full width through the portrait as it dissolves into the page.
 
 Decided by him on 2026-10-08: the About photo is the full, uncropped graduation portrait (gown and sash included). He found the tight face crop too close. This overrides the finish review's request to crop the sash out; do not re-crop it.
 
-Unresolved: LinkedIn address, CV download, custom domain, real screenshots of DormHub with data, the year he entered UP (shown as 2024, inferred).
+Unresolved: CV download, custom domain, real screenshots of DormHub with data, the year he entered UP (shown as 2024, inferred).
 
 ## Direction contract
 
