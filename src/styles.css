@@ -127,6 +127,7 @@ button { font: inherit; color: inherit; }
 .shot { position: relative; flex: 0 1 auto; width: 100%; min-height: 0; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: var(--deep); box-shadow: 0 0 0 1px var(--rule); }
 .shot--wide { aspect-ratio: 16 / 9; }
 .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.shot video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .shot--center img { object-position: center; }
 /* AntiDoomScroll shows three real screens: the prompt close up, then the settings panel beside the prompt on a page. */
 .shot-trio { flex: 0 1 auto; display: grid; grid-template-columns: .769fr 1.6fr; grid-template-rows: minmax(0, .42fr) minmax(0, .58fr); gap: clamp(10px, 1.1vw, 16px); width: 100%; min-height: 0; aspect-ratio: 1.42; }
