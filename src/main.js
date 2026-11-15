@@ -10,6 +10,7 @@ const still =
 root.classList.toggle('still', still);
 
 setupCopyEmail();
+setupWork();
 if (!still) setupMotion();
 
 function setupCopyEmail() {
@@ -28,6 +29,25 @@ function setupCopyEmail() {
     clearTimeout(timer);
     timer = setTimeout(() => { status.textContent = ''; }, 5000);
   });
+}
+
+// A link to a project (the hero index, or an address ending in #project) opens that project's row.
+function setupWork() {
+  const stack = document.querySelector('.stack');
+  if (!stack) return;
+  const open = (hash) => {
+    const row = hash.length > 1 && document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!row || !row.matches('details.case') || row.open) return;
+    // Open at once, without the height animation, so the page scrolls to where the row really is.
+    stack.classList.add('jump');
+    row.open = true;
+    stack.offsetHeight;
+    requestAnimationFrame(() => stack.classList.remove('jump'));
+  };
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => open(link.getAttribute('href')));
+  });
+  open(location.hash);
 }
 
 function setupMotion() {
@@ -57,6 +77,27 @@ function setupMotion() {
   }, { rootMargin: '0px 0px -12% 0px' });
   document.querySelectorAll('.reveal').forEach((el) => seen.observe(el));
 
+  // Groups marked data-rise: their entries fade up in a stagger, once.
+  // The value is a selector for the entries; without one, the direct children rise.
+  const rising = new IntersectionObserver((entries) => {
+    for (const { isIntersecting, target } of entries) {
+      if (!isIntersecting) continue;
+      rising.unobserve(target);
+      target.classList.add('in');
+      // Afterwards the helper class goes, so each entry gets its own hover timing back.
+      const items = target.querySelectorAll('.rise');
+      setTimeout(() => items.forEach((el) => el.classList.remove('rise')), 1100 + items.length * 55);
+    }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('[data-rise]').forEach((group) => {
+    const items = group.dataset.rise ? group.querySelectorAll(group.dataset.rise) : group.children;
+    [...items].forEach((el, i) => {
+      el.classList.add('rise');
+      el.style.setProperty('--i', i);
+    });
+    rising.observe(group);
+  });
+
   // About statement: words brighten as the paragraph scrolls through.
   const statement = document.querySelector('[data-words]');
   if (statement) {
@@ -85,20 +126,9 @@ function setupMotion() {
 
   });
 
-  // Work: only where the projects pin (wide and tall enough windows).
-  media.add('(min-width: 960px) and (min-height: 701px)', () => {
-    // As the next project slides over, the pinned one sinks back.
-    const cases = gsap.utils.toArray('.case');
-    cases.forEach((item, i) => {
-      const next = cases[i + 1];
-      if (!next) return;
-      gsap.to(item.querySelector('.case__inner'), {
-        scale: 0.94,
-        opacity: 0.25,
-        ease: 'none',
-        scrollTrigger: { trigger: next, start: 'top 72%', end: 'top top', scrub: true },
-      });
-    });
+  // Opening or closing a project changes the page height, so scroll positions are measured again.
+  document.querySelectorAll('details.case').forEach((row) => {
+    row.addEventListener('toggle', () => setTimeout(() => ScrollTrigger.refresh(), 750));
   });
 
   document.fonts?.ready.then(() => ScrollTrigger.refresh());

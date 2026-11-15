@@ -36,7 +36,9 @@ Visitors arrive from a freelance profile, a LinkedIn or GitHub link, or a job ap
 
 ## Capabilities and Constraints
 
-- Featured projects, confirmed by Geoffrey: SkolarTrack, AntiDoomScroll, Pathfinder-8, DormHub, and CanYouPassSOPP (added at his request on 2026-10-08).
+- Featured projects, confirmed by Geoffrey: SkolarTrack, AntiDoomScroll, Pathfinder-8, DormHub, and CanYouPassSOPP (added at his request on 2026-10-08), plus StreakLy and How to Train Your AI (added at his request on 2026-11-16).
+- Current roles, in his words on 2026-11-16: software developer intern at FSudoLabs, and machine learning intern at "Flyrank AI" (written on the site as FlyRank AI). He stressed that he is an intern only. He gave no start dates, descriptions or links, so the site states the titles and companies only. The site still says he is open to freelance work and junior roles.
+- Smaller projects listed under the featured ones (chosen from his GitHub, not confirmed by him): X's & O's (Tic-Tac-Toe-Test, Next.js and TypeScript, live on Vercel), Monte Royale Residences landing page (LandingPage, Google Apps Script). NeetCode150 was removed at his request on 2026-11-16.
 - Must work as a static site with no backend.
 - Sections he asked for: projects, About me, Skills and tools, Education, Certifications, Contact. No Services section.
 - Contact: email (tomagan.geoffreyadam@gmail.com) plus GitHub (github.com/Geoffkai), LinkedIn (linkedin.com/in/geoffrey-adam-tomagan-238034286) and Facebook (facebook.com/geoffrey.tomagan.1), supplied 2026-10-08.

@@ -148,7 +148,7 @@ A near-black navy ground, cool white type, one grey-blue for secondary text and 
 - **Azure Ink** (`blue-ink`): the text colour on azure fills only (5.8:1). It is never used as a surface.
 
 ### Neutral
-- **Backdrop Night** (`night`): the page ground, the scrollbar track, and the opaque background of each pinned project so it can cover the one beneath it.
+- **Backdrop Night** (`night`): the page ground, the scrollbar track.
 - **Deep Navy** (`deep`): the placeholder behind a screenshot while it loads. It is not a panel colour.
 - **Cool White** (`fg`): all primary text, at 16.8:1 on the ground.
 - **Slate Mute** (`mute`): secondary text, captions, dates, fact labels and the second half of the hero intro line, at 7.7:1.
@@ -195,7 +195,7 @@ Grids are asymmetric two-part splits on twelfths: 8/4 for a project (media, then
 
 The hero is one viewport (100svh, between 680px and 1100px). The portrait is centred at 4:5 and nearly full height; the intro sits at the left gutter and the project index at the right gutter, both 22% from the top; the name crosses the full width over the portrait's lower fade; a status line and the contact button close the bottom edge. The navigation is fixed, 76px tall, and steps out of the way while scrolling down.
 
-Each project fills one viewport and pins (sticky) while the next slides over it; the covered one scales to 0.94 and dims to 25%. Pinning only happens at 960px wide and above 700px tall. In shorter windows and below 960px nothing pins, so every link stays reachable.
+The projects are one ruled list, a row per project (changed from full-screen pinned projects on 2026-11-16, when Geoffrey said the section had become too long). A row shows the title, its kind and a plus mark; opening it shows the 8/4 media and text split underneath and closes whichever row was open. The first project is open on arrival. A link to a project from the hero index opens its row.
 
 Below 960px everything becomes one column: the portrait goes full width with the name pulled up over its fade, project grids stack with 24px gaps, skills go to two columns, and dated rows stack. Below 520px skills go to one column and the fact label column narrows to 84px.
 
@@ -203,7 +203,7 @@ Below 960px everything becomes one column: the portrait goes full width with the
 
 Flat. There are no drop shadows anywhere. The only `box-shadow` in the system is a 1px ring in the hairline colour around screenshots, which is a border, not a shadow.
 
-Depth comes from three things instead: the portrait dissolving into the ground through a two-axis mask; overlap, where each pinned project physically covers the last on an opaque ground; and dimming, where the covered project and the scrolled-away portrait lose opacity. The navigation is white text with `mix-blend-mode: difference` and no bar behind it, so it stays readable over the portrait and over light screenshots without a surface of its own.
+Depth comes from three things instead: the portrait dissolving into the ground through a two-axis mask; and dimming, where the scrolled-away portrait loses opacity. The navigation is white text with `mix-blend-mode: difference` and no bar behind it, so it stays readable over the portrait and over light screenshots without a surface of its own.
 
 ### Named Rules
 **The No Surface Rule.** Nothing floats. If something needs to be in front, it covers what is behind it edge to edge on Backdrop Night; it does not get a shadow, a blur or a raised panel.
@@ -236,7 +236,7 @@ A ruled list of links: name at the left (weight 500, Lead size), kind at the rig
 A 6px-cornered frame with a hairline ring and a Deep Navy placeholder, holding a real, uncropped-at-the-top screenshot at 16:10 or 16:9. A one-sentence caption in Caption style sits 12px below and says what the picture is. A project with several screens uses a three-frame arrangement: one wide frame above a narrow and a wide one.
 
 ### Project heading
-The project title in Headline style with its kind on the same baseline at the far right, 17px in azure. Below 960px the kind drops under the title.
+The row you press to open a project: the title (600, clamp(30px, 4.2vw, 64px), -0.04em) with its kind on the same baseline at the right, 17px in azure, then a plus drawn from two 2px bars that becomes a minus when the row is open. On hover the row turns azure and the title slides 8px. Below 960px the kind drops under the title.
 
 ### Fact rows
 A definition list: Slate Mute label in a fixed 96px column, value beside it, 15px, 11px vertical padding, hairline above each row.
@@ -245,13 +245,16 @@ A definition list: Slate Mute label in a fixed 96px column, value beside it, 15p
 Rows split 3/9: a Slate Mute date with tabular numerals, then a Title heading and one supporting line. 28px vertical padding, hairline above each row.
 
 ### Column list
-A hairline, then a small Slate Mute heading (15px, weight 500), then entries in Item style 10px apart.
+A hairline, then a small Slate Mute heading (15px, weight 500), then entries in Item style 12px apart. In the skills list each entry starts with a 1em single-colour mark in Slate Mute (Simple Icons brand marks, or a plain line drawing where no brand exists), served from one inline SVG sprite. On hover the mark turns Cool White and tilts slightly.
+
+### More work list
+Under the project rows, a ruled list of smaller projects split 3/8/1: name in Item style, one Slate Mute sentence, and the action word (Play or Source) underlined at the right. The whole row is the link and behaves like an index row on hover.
 
 ### Email line
 The address set large (weight 500, clamp(21px, 4.6vw, 68px)) and allowed to break anywhere. On hover a 2px underline draws from the left over 0.6s and the text turns azure. The copy button beside it reports its result in a polite live region in Slate Mute.
 
 ### Motion
-One easing for everything: `cubic-bezier(.16, 1, .3, 1)`. Section headings rise from behind a mask once, the first time they enter view (1.1s). The hero loads with the portrait settling from 1.06 scale, the name rising, and the intro, index and footer fading up 16px in a 90ms stagger. Scroll-linked motion is scrubbed and linear: the portrait drifts and dims, the name rises through it, the About statement brightens word by word. Hidden start states exist only after the script confirms it is running, and all motion is off under `prefers-reduced-motion`.
+One easing for everything: `cubic-bezier(.16, 1, .3, 1)`. Section headings rise from behind a mask once, the first time they enter view (1.1s). The hero loads with the portrait settling from 1.06 scale, the name rising, and the intro, index and footer fading up 16px in a 90ms stagger. List entries (skills, the dated list, certifications, the more work list, contact buttons) fade up 18px in a 55ms stagger the first time their group enters view, and skill marks spin in from 0.4 scale behind their label. Scroll-linked motion is scrubbed and linear: the portrait drifts and dims, the name rises through it, and the About statement brightens word by word. A project row animates its height open and closed (0.7s) where the browser supports it, and its content fades up. One band of tools between Work and About drifts sideways on a 50s linear loop and stops under the pointer; it repeats the skills list, so it is hidden from screen readers. Hidden start states exist only after the script confirms it is running, and all motion is off under `prefers-reduced-motion`.
 
 ## Do's and Don'ts
 
@@ -263,14 +266,14 @@ One easing for everything: `cubic-bezier(.16, 1, .3, 1)`. Section headings rise 
 - **Do** keep text columns to 46ch for leads and descriptions and 56ch for supporting lines.
 - **Do** show real screenshots with a caption that says what they are.
 - **Do** use the one house ease, and give every animated element a visible resting state without script and under reduced motion.
-- **Do** keep pinned layouts behind the width and height conditions so no link becomes unreachable.
+- **Do** keep every project reachable without script: the rows are native `details` elements.
 
 ### Don't:
 - **Don't** add a light theme or a section with its own background colour; the ground is the portrait's backdrop.
 - **Don't** put content in cards, panels or raised surfaces.
 - **Don't** add drop shadows, glows or blurs. The 1px ring on screenshots is the only box-shadow.
 - **Don't** introduce a second accent colour or a second typeface.
-- **Don't** use icons; every control is labelled in words.
+- **Don't** use icons on controls; every control is labelled in words. The one place icons appear is the skills list (asked for by Geoffrey on 2026-11-16): a single-colour mark in Slate Mute before each written skill name, never an icon on its own and never in brand colours.
 - **Don't** set text in uppercase or with widened letter-spacing.
 - **Don't** put a bar or fill behind the navigation.
 - **Don't** give the hero portrait a frame, a border or a rounded crop; it dissolves into the ground.
